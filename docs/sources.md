@@ -13,9 +13,9 @@
 - Imported commit: `c4a1567`
 - License: AGPL-3.0
 - 用途：PRD、需求确认、测试用例、UI/UX 原型提示词、BMAD/requirements 方法论。
-- 当前保留：`myclaude-product-workflow`。
+- 当前保留：`browser`、`codeagent`、`dev`、`do`、`harness`、`omo`、`product-requirements`、`prototype-prompt-generator`、`skill-install`、`sparv`、`test-cases`、`myclaude-product-workflow`。
+- 兼容处理：上游 skill 中 `~/.claude/skills` 与 `.claude/...` 路径已改为 `~/.codex/skills` 与 `.codex/...`。
 
 ## local
 
 - `ppw-codex-engineer`：本地个人工作流聚合 skill。
-

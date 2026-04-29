@@ -4,16 +4,12 @@
 
 - `algorithmic-art`
 - `brand-guidelines`
-- `browser`
 - `canvas-design`
 - `ccxt`
 - `claude-code-guide`
 - `claude-cookbooks`
-- `codeagent`
 - `coingecko`
 - `cryptofeed`
-- `dev`
-- `do`
 - `doc-coauthoring`
 - `docx`
 - `frontend-design`
@@ -21,15 +17,12 @@
 - `internal-comms`
 - `markdown-to-epub`
 - `mcp-builder`
-- `omo`
 - `pdf`
 - `polymarket`
 - `pptx`
 - `proxychains`
-- `skill-install`
 - `slack-gif-creator`
 - `snapdom`
-- `sparv`
 - `theme-factory`
 - `web-artifacts-builder`
 - `webapp-testing`
@@ -42,4 +35,3 @@
 - 用户明确不需要的交易和代理类不保留。
 - 和当前已有系统技能重复的，不重复安装。
 - 可作为知识参考的内容放进 `refs/` 或某个 skill 的 `references/`。
-
