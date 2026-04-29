@@ -1,0 +1,4 @@
+interface:
+  display_name: "MyClaude 产品工作流"
+  short_description: "把想法整理为 PRD、需求确认、测试用例和 UI/UX 原型提示词。"
+  default_prompt: "使用 $myclaude-product-workflow 帮我把这个想法整理成 PRD，并补充验收标准和测试用例。"

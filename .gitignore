@@ -1,0 +1,20 @@
+# 运行时与敏感文件
+auth.json
+history.jsonl
+installation_id
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.env
+.env.*
+log/
+logs/
+shell_snapshots/
+
+# 外部仓库与缓存
+repos/*
+!repos/.gitkeep
+node_modules/
+__pycache__/
+.DS_Store
+
