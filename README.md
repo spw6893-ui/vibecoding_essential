@@ -5,7 +5,7 @@ PPW 的个人 Codex 仓库。
 它只放长期有用的东西：
 
 - `skills/`：当前保留的 Codex skills
-- `refs/`：从外部仓库提炼出来的参考资料
+- `refs/`：从外部仓库提炼出来的少量参考资料，不保存完整上游镜像
 - `config/`：安全的 Codex 配置示例，不含真实密钥和机器完整配置
 - `docs/`：来源、裁剪记录、维护说明
 - `scripts/`：安装和同步脚本
@@ -28,7 +28,7 @@ PPW 的个人 Codex 仓库。
 - `tmux-autopilot`：tmux 自动化
 - `twscrape`：Twitter/X 数据抓取
 
-`refs/myclaude-skills/` 保留 myclaude 原生 skills 作为参考资料，不作为活跃技能暴露。
+`myclaude` 的 PRD、测试、原型提示词等内容已提炼进 `myclaude-product-workflow`，不再保留原始 skill 副本。
 `refs/gh-flow/` 保留 GitHub issue-to-PR / PR review 原始流程作为参考，不作为活跃技能暴露。
 
 ## 安装
@@ -59,6 +59,6 @@ PPW 的个人 Codex 仓库。
 - 新 skill 必须有明确高频用途，否则只放进 `refs/`。
 - `SKILL.md` 保持短，长模板放 `references/`。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
-- 外部来源要记录在 `docs/sources.md`。
+- 外部来源要记录在 `docs/sources.md`，但不要提交完整外部仓库或运行状态。
 - Skill 能力盘点与候选合并建议见 `docs/skills-capabilities.md`。
-- `/home/ppw/ppw-codex-kit` 已整合进本仓库，记录见 `docs/repository-consolidation.md`。
+- `/home/ppw/ppw-codex-kit` 已归档，后续只维护本仓库。

@@ -16,7 +16,7 @@
 - License: AGPL-3.0
 - 用途：PRD、需求确认、测试用例、UI/UX 原型提示词、BMAD/requirements 方法论。
 - 当前活跃保留：`harness`、`myclaude-product-workflow`。
-- 参考资料保留：`browser`、`codeagent`、`dev`、`do`、`omo`、`product-requirements`、`prototype-prompt-generator`、`skill-install`、`sparv`、`test-cases` 位于 `refs/myclaude-skills/`，不作为活跃 skill 暴露。
+- 参考资料处理：不再保留上游原始 skill 副本；PRD、测试、BMAD/requirements、原型提示词等关键内容已收敛进 `skills/myclaude-product-workflow/references/`。
 - 兼容处理：上游 skill 中 `~/.claude/skills` 与 `.claude/...` 路径已改为 `~/.codex/skills` 与 `.codex/...`。
 
 ## local
@@ -49,3 +49,10 @@
 - Local repo: `repos/code-guardrails-skill` at `fd952e0`
 - 用途：代码修改前的轻量工程护栏，防止架构漂移、范围蔓延、隐性 MVP 取舍和过早基础设施。
 - 当前决策：暂不单独活跃安装，建议内置到 `ppw-codex-engineer`。
+
+## cleanup policy
+
+- `refs/` 只保留精选参考、索引和可复用模板。
+- 原始仓库完整内容只放 ignored 的 `repos/` 本地缓存，不进入提交历史。
+- 不保留 Claude 插件元数据、agents/hooks 脚手架、运行状态、历史 artifacts、安装时间戳。
+- 不保留用户明确排除的交易/代理类资料与运行时。

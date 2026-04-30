@@ -8,7 +8,6 @@
 |:---|:---|
 | [fate-engine-dev](./fate-engine-dev/) | Fate Engine 开发记录 |
 | [openclaw-dev](./openclaw-dev/) | OpenClaw 架构 / 部署 / 生态调研资料 |
-| [polymarket-dev](./polymarket-dev/) | Polymarket 数据分析 |
 | [telegram-dev](./telegram-dev/) | Telegram Bot 开发 |
 
 ## 🔗 相关资源

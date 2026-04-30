@@ -28,6 +28,9 @@ if [[ "$PRUNE" -eq 1 ]]; then
 fi
 
 rsync -a "$ROOT_DIR/skills/" "$CODEX_HOME/skills/"
+
+# 仅清理本仓库管理的参考目录，避免删除用户自己的 references。
+rm -rf "$CODEX_HOME/references/gh-flow" "$CODEX_HOME/references/vibe-coding-cn" "$CODEX_HOME/references/myclaude-skills"
 rsync -a "$ROOT_DIR/refs/" "$CODEX_HOME/references/"
 
 echo "mycodex 已安装到: $CODEX_HOME"

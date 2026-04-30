@@ -4,16 +4,16 @@
 
 - `algorithmic-art`
 - `brand-guidelines`
-- `browser`（保留在 `refs/myclaude-skills/`，不活跃）
+- `browser`
 - `canvas-design`
 - `ccxt`
 - `claude-code-guide`
 - `claude-cookbooks`
-- `codeagent`（保留在 `refs/myclaude-skills/`，不活跃）
+- `codeagent`
 - `coingecko`
 - `cryptofeed`
-- `dev`（保留在 `refs/myclaude-skills/`，不活跃）
-- `do`（保留在 `refs/myclaude-skills/`，不活跃）
+- `dev`
+- `do`
 - `doc-coauthoring`
 - `docx`
 - `frontend-design`
@@ -23,7 +23,7 @@
 - `internal-comms`
 - `markdown-to-epub`
 - `mcp-builder`
-- `omo`（保留在 `refs/myclaude-skills/`，不活跃）
+- `omo`
 - `pdf`
 - `polymarket`
 - `pptx`
@@ -33,12 +33,21 @@
 - `skill-install`（安装逻辑不作为活跃 skill 暴露）
 - `slack-gif-creator`
 - `snapdom`
-- `sparv`（保留在 `refs/myclaude-skills/`，不活跃）
+- `sparv`
 - `theme-factory`
 - `test-cases`（由 `myclaude-product-workflow` 聚合覆盖）
 - `web-artifacts-builder`
 - `webapp-testing`
 - `xlsx`
+
+## 已清理的参考资料
+
+- `refs/myclaude-skills/`：原始 skill 副本已由 `myclaude-product-workflow` 聚合覆盖。
+- `refs/vibe-coding-cn/config-template/`：上游个人化 Codex 配置模板，容易污染当前全局配置。
+- `refs/vibe-coding-cn/documents/case-studies/polymarket-dev/`：用户明确不需要 Polymarket。
+- `refs/vibe-coding-cn/documents/guides/playbook/ProxyCast配置文档.md`：代理凭证转换运行时，不纳入个人 Codex 仓库。
+- `workflow_engine/artifacts/`、`workflow_engine/state/`、`.installed_at`、`install-manifest.md`：运行状态与历史安装记录。
+- `AGENTS.md`、`.kiro/agents/`、`.claude-plugin/`、`agents/`、`hooks/` 类上游脚手架：不作为用户页面或运行入口暴露。
 
 ## 裁剪原则
 
