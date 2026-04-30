@@ -1,8 +1,6 @@
-# vibe-coding-cn 项目模板摘录
+# 项目模板摘录
 
-来源：`/home/ppw/mycodex/repos/vibe-coding-cn`
-
-本文件只保留对 PPW Codex 工作流有复用价值的项目框架建议。上游仓库还包含大量案例、外部仓库、交易/代理类技能与个人化配置，当前不纳入活跃 skill。
+本文件只保留对 PPW Codex 工作流有复用价值的项目框架建议。上游来源、导入记录和裁剪说明见 `docs/sources.md` 与 `docs/pruned.md`。
 
 ## 使用时机
 
