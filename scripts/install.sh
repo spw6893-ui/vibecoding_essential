@@ -13,7 +13,7 @@ for arg in "$@"; do
     *)
       echo "未知参数: $arg" >&2
       echo "用法: $0 [--prune]" >&2
-      echo "说明: 本脚本只同步 skills/ 与 refs/，不会覆盖 ~/.codex/config.toml 或 ~/.codex/AGENTS.md" >&2
+      echo "说明: 本脚本只同步 skills/ 与 references/，不会覆盖 ~/.codex/config.toml 或 ~/.codex/AGENTS.md" >&2
       exit 2
       ;;
   esac
@@ -33,6 +33,6 @@ rsync -a "$ROOT_DIR/skills/" "$CODEX_HOME/skills/"
 
 # 仅清理本仓库管理的参考目录，避免删除用户自己的 references。
 rm -rf "$CODEX_HOME/references/gh-flow" "$CODEX_HOME/references/vibe-coding-cn" "$CODEX_HOME/references/myclaude-skills"
-rsync -a "$ROOT_DIR/refs/" "$CODEX_HOME/references/"
+rsync -a "$ROOT_DIR/references/" "$CODEX_HOME/references/"
 
 echo "mycodex 已安装到: $CODEX_HOME"

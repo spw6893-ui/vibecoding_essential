@@ -12,9 +12,9 @@ if find skills -path '*/agents/openai.yaml' -print | grep -q .; then
   exit 1
 fi
 
-if find skills refs -name '__pycache__' -o -name '*.pyc' -o -name '.DS_Store' -o -name '._*' -o -name '__MACOSX' | grep -q .; then
+if find skills references -name '__pycache__' -o -name '*.pyc' -o -name '.DS_Store' -o -name '._*' -o -name '__MACOSX' | grep -q .; then
   echo "发现缓存或系统垃圾文件，请清理后再提交" >&2
-  find skills refs -name '__pycache__' -o -name '*.pyc' -o -name '.DS_Store' -o -name '._*' -o -name '__MACOSX'
+  find skills references -name '__pycache__' -o -name '*.pyc' -o -name '.DS_Store' -o -name '._*' -o -name '__MACOSX'
   exit 1
 fi
 

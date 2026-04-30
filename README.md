@@ -5,7 +5,7 @@ PPW 的个人 Codex 仓库。
 它只放长期有用的东西：
 
 - `skills/`：当前保留的 Codex skills
-- `refs/`：从外部仓库提炼出来的少量参考资料，不保存完整上游镜像
+- `references/`：从外部仓库提炼出来的少量参考资料，不保存完整上游镜像
 - `config/`：安全的 Codex 配置示例，不含真实密钥和机器完整配置
 - `docs/`：来源、裁剪记录、维护说明
 - `scripts/`：安装和同步脚本
@@ -29,7 +29,7 @@ PPW 的个人 Codex 仓库。
 - `twscrape`：Twitter/X 数据抓取
 
 `myclaude` 的 PRD、测试、原型提示词等内容已提炼进 `product-spec-workflow`，不再保留原始 skill 副本。
-`refs/gh-flow/` 保留 GitHub issue-to-PR / PR review 原始流程作为参考，不作为活跃技能暴露。
+`references/gh-flow/` 保留 GitHub issue-to-PR / PR review 原始流程作为参考，不作为活跃技能暴露。
 
 ## 安装
 
@@ -37,7 +37,7 @@ PPW 的个人 Codex 仓库。
 ./scripts/install.sh
 ```
 
-默认安装到 `${CODEX_HOME:-$HOME/.codex}`。安装只同步 `skills/` 和 `refs/`，不会覆盖你的 `~/.codex/config.toml` 或 `~/.codex/AGENTS.md`。
+默认安装到 `${CODEX_HOME:-$HOME/.codex}`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `~/.codex/config.toml` 或 `~/.codex/AGENTS.md`。
 
 如果要删除之前裁掉的旧 skill 残留：
 
@@ -56,7 +56,7 @@ PPW 的个人 Codex 仓库。
 ## 维护原则
 
 - 少而精，避免 skill 数量膨胀。
-- 新 skill 必须有明确高频用途，否则只放进 `refs/`。
+- 新 skill 必须有明确高频用途，否则只放进 `references/`。
 - `SKILL.md` 保持短，长模板放 `references/`。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
 - 外部来源要记录在 `docs/sources.md`，但不要提交完整外部仓库或运行状态。

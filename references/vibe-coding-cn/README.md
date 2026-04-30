@@ -6,13 +6,13 @@
 
 ## 目录
 
-- `documents/`：精选工程原则与基础方法论。
-- `prompt/`：提示词素材。
+- `fundamentals/`：精选工程原则与基础方法论。
+- `prompts.md`：提示词素材入口。
 - `project-templates.md`：从上游提炼的项目目录、GitHub 模板、Codex 配置基线和自动开发闭环建议。
 
 ## 使用规则
 
-- 需要方法论时优先读取 `documents/principles/`。
+- 需要方法论时优先读取 `fundamentals/`。
 - 需要项目初始化、目录结构、GitHub 模板或工程框架建议时读取 `project-templates.md`。
 - 需要个人工作流时使用 `$ppw-codex-engineer`。
 

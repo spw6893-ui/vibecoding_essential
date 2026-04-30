@@ -8,7 +8,7 @@
 |---|---|---|---|
 | `ppw-codex-engineer` | 个人工程总入口：项目分析、最小修改、验证闭环、项目框架模板路由、专用 skill 分发 | 实现、修复、重构、审查、配置治理、项目初始化 | 当前应作为工程类任务默认入口 |
 | `product-spec-workflow` | PRD、需求确认、验收标准、测试用例、QA 计划、原型提示词 | 写 PRD、整理需求、产品到研发交付 | 聚合替代 myclaude 多个原生产品 skill |
-| `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | 只保留 issue 创建；实现/评审流程暂放 refs |
+| `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | 只保留 issue 创建；实现/评审流程暂放 references |
 | `auto-skill` | 从文档/API/仓库材料提炼 reusable skill，重构已有 skill | 创建或优化 skill | 适合沉淀新能力 |
 | `ddd-doc-steward` | 文档驱动开发，生成/更新 SSOT 文档并做一致性检查 | 文档与代码同步、补齐架构/集成/功能文档 | 强调证据，无法推导时标注待确认 |
 | `headless-cli` | Gemini/Claude/Codex CLI 无交互批处理与多模型编排 | 批量翻译、审查、模型对比、后台执行 | 注意不要泄露密钥和个人数据 |
