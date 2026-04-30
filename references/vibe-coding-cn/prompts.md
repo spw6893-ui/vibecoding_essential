@@ -24,7 +24,7 @@
 ## 相关资源
 
 - [技能库](../skills/) - 比提示词更高级的能力封装
-- [文档库](../documents/) - 方法论与开发经验
+- [工程参考](./fundamentals/) - 精选工程硬约束与数据服务模板
 - [prompts-library 工具](../repos/prompts-library/)
   Excel ↔ Markdown 互转工具
 
