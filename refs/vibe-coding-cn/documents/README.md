@@ -8,7 +8,6 @@
 assets/documents/
 ├── principles/          # 工程原则与基础方法论
 │   └── fundamentals/    # 原 00-基础指南
-└── workflow/            # 可复用工作流模板
 ```
 
 ## 🚀 快速导航
@@ -16,12 +15,10 @@ assets/documents/
 | 目录 | 说明 | 适合人群 |
 |:---|:---|:---|
 | [principles](./principles/) | 工程原则与基础方法论 | 架构师与深度开发者 |
-| [workflow](./workflow/) | 自动化工作流模板 | Agent 编排与流程复用 |
 
 ## 📖 推荐学习路径
 
 1. **理念** → [胶水编程](./principles/fundamentals/胶水编程.md)
-2. **流程** → [工作流模板](./workflow/)
 
 ## 🔗 相关资源
 

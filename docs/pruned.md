@@ -49,6 +49,7 @@
 - `refs/vibe-coding-cn/documents/guides/playbook/ProxyCast配置文档.md`：代理凭证转换运行时，不纳入个人 Codex 仓库。
 - `refs/vibe-coding-cn/documents/guides/`：入门配置、编辑器快捷键、远程隧道、frp、Auggie、Gemini Headless 等资料与现有 skill 或个人环境重复，整体裁掉。
 - `refs/vibe-coding-cn/documents/principles/philosophy/`：哲学长文和抽象方法论不直接支撑 Codex 执行，整体裁掉。
+- `refs/vibe-coding-cn/documents/workflow/`：auto-dev-loop/Kiro/Hook 实验流程和 Markdown 转 EPUB 低频流程已由 `ppw-codex-engineer`、`harness`、`myclaude-product-workflow` 与 `project-templates.md` 摘要覆盖。
 - `workflow_engine/artifacts/`、`workflow_engine/state/`、`.installed_at`、`install-manifest.md`：运行状态与历史安装记录。
 - `AGENTS.md`、`.kiro/agents/`、`.claude-plugin/`、`agents/`、`hooks/` 类上游脚手架：不作为用户页面或运行入口暴露。
 

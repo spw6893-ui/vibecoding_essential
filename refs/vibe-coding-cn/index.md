@@ -6,18 +6,17 @@
 
 ## 目录
 
-- `documents/`：精选工程原则、基础方法论和工作流。
+- `documents/`：精选工程原则与基础方法论。
 - `prompt/`：提示词素材。
 - `project-templates.md`：从上游提炼的项目目录、GitHub 模板、Codex 配置基线和自动开发闭环建议。
 
 ## 使用规则
 
 - 需要方法论时优先读取 `documents/principles/`。
-- 需要操作流程时优先读取 `documents/workflow/`。
 - 需要项目初始化、目录结构、GitHub 模板或工程框架建议时读取 `project-templates.md`。
 - 需要个人工作流时使用 `$ppw-codex-engineer`。
 
 ## 已清理
 
 - 不保留上游完整仓库、个人化 Codex 配置模板、安装清单、运行状态和 artifacts。
-- 不保留 `guides/`、`case-studies/`、`principles/philosophy/`、`Polymarket`、`ProxyCast` 等低复用或用户明确排除资料。
+- 不保留 `guides/`、`case-studies/`、`principles/philosophy/`、`workflow/`、`Polymarket`、`ProxyCast` 等低复用或用户明确排除资料。
