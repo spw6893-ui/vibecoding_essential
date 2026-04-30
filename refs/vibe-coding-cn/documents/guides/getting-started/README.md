@@ -12,4 +12,3 @@
 ## 🔗 相关资源
 - [基础指南](../../principles/fundamentals/) - 核心理念与方法论
 - [方法论](../playbook/) - 工具与经验
-- [实战](../../case-studies/) - 动手实践项目

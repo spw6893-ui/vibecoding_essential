@@ -45,6 +45,7 @@
 - `refs/myclaude-skills/`：原始 skill 副本已由 `myclaude-product-workflow` 聚合覆盖。
 - `refs/vibe-coding-cn/config-template/`：上游个人化 Codex 配置模板，容易污染当前全局配置。
 - `refs/vibe-coding-cn/documents/case-studies/polymarket-dev/`：用户明确不需要 Polymarket。
+- `refs/vibe-coding-cn/documents/case-studies/`：项目案例长文和一次性 prompt 复用价值低，不进入个人 Codex kit。
 - `refs/vibe-coding-cn/documents/guides/playbook/ProxyCast配置文档.md`：代理凭证转换运行时，不纳入个人 Codex 仓库。
 - `workflow_engine/artifacts/`、`workflow_engine/state/`、`.installed_at`、`install-manifest.md`：运行状态与历史安装记录。
 - `AGENTS.md`、`.kiro/agents/`、`.claude-plugin/`、`agents/`、`hooks/` 类上游脚手架：不作为用户页面或运行入口暴露。

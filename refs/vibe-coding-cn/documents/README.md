@@ -12,7 +12,6 @@ assets/documents/
 ├── guides/              # 入门与方法（getting-started + playbook）
 │   ├── getting-started/ # 原 01-入门指南
 │   └── playbook/        # 原 02-方法论
-├── case-studies/        # 原 03-实战
 └── workflow/            # 可复用工作流模板
 ```
 
@@ -22,7 +21,6 @@ assets/documents/
 |:---|:---|:---|
 | [principles](./principles/) | 原则与思想（基础 + 哲学） | 架构师与深度开发者 |
 | [guides](./guides/) | 入门与方法（上手 + 工具与经验） | 新手入门与效率提升 |
-| [case-studies](./case-studies/) | 项目经验、案例复盘 | 动手实践 |
 | [workflow](./workflow/) | 自动化工作流模板 | Agent 编排与流程复用 |
 
 ## 📖 推荐学习路径
@@ -33,8 +31,7 @@ assets/documents/
 4. **配置** → [开发环境搭建](./guides/getting-started/开发环境搭建.md)
 5. **工具** → [tmux 快捷键](./guides/playbook/tmux快捷键大全.md)
 6. **远程** → [VS Code Remote Tunnel（WSL）](./guides/playbook/REMOTE_TUNNEL_GUIDE.md)
-7. **实践** → [项目实战经验](./case-studies/)
-8. **流程** → [工作流模板](./workflow/)
+7. **流程** → [工作流模板](./workflow/)
 
 ## 🔗 相关资源
 

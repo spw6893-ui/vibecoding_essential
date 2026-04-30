@@ -29,4 +29,3 @@
 ## 🔗 相关资源
 - [入门指南](../../guides/getting-started/) - 从零开始
 - [方法论](../../guides/playbook/) - 工具与经验
-- [实战](../../case-studies/) - 动手实践
