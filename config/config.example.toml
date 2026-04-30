@@ -1,0 +1,19 @@
+# PPW Codex 配置示例
+# 这是安全模板，不是当前机器完整配置。真实配置请放在 ~/.codex/config.toml。
+
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+network_access = true
+personality = "pragmatic"
+
+[features]
+multi_agent = true
+
+# 如需自定义 provider，请在本地 ~/.codex/config.toml 中配置，不要把密钥写入仓库。
+# [model_providers.example]
+# name = "example"
+# base_url = "https://example.com"
+# wire_api = "responses"
+# requires_openai_auth = true

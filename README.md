@@ -6,6 +6,7 @@ PPW 的个人 Codex 仓库。
 
 - `skills/`：当前保留的 Codex skills
 - `refs/`：从外部仓库提炼出来的参考资料
+- `config/`：安全的 Codex 配置示例，不含真实密钥和机器完整配置
 - `docs/`：来源、裁剪记录、维护说明
 - `scripts/`：安装和同步脚本
 
@@ -36,7 +37,7 @@ PPW 的个人 Codex 仓库。
 ./scripts/install.sh
 ```
 
-默认安装到 `${CODEX_HOME:-$HOME/.codex}`。
+默认安装到 `${CODEX_HOME:-$HOME/.codex}`。安装只同步 `skills/` 和 `refs/`，不会覆盖你的 `~/.codex/config.toml` 或 `~/.codex/AGENTS.md`。
 
 如果要删除之前裁掉的旧 skill 残留：
 
@@ -46,6 +47,12 @@ PPW 的个人 Codex 仓库。
 
 安装后重开 Codex 会话，让技能发现列表刷新。
 
+如果要补齐部分 skill 需要的外部依赖仓库：
+
+```bash
+./scripts/bootstrap-external-repos.sh
+```
+
 ## 维护原则
 
 - 少而精，避免 skill 数量膨胀。
@@ -54,3 +61,4 @@ PPW 的个人 Codex 仓库。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
 - 外部来源要记录在 `docs/sources.md`。
 - Skill 能力盘点与候选合并建议见 `docs/skills-capabilities.md`。
+- `/home/ppw/ppw-codex-kit` 已整合进本仓库，记录见 `docs/repository-consolidation.md`。
