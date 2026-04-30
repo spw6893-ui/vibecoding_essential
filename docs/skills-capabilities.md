@@ -6,7 +6,7 @@
 
 | Skill | 核心能力 | 典型触发 | 备注 |
 |---|---|---|---|
-| `ppw-codex-engineer` | 个人工程总入口：项目分析、最小修改、验证闭环、项目框架模板路由、专用 skill 分发 | 实现、修复、重构、审查、配置治理、项目初始化 | 当前应作为工程类任务默认入口 |
+| `ppw-codex-engineer` | 个人工程路由：Codex 配置治理、项目框架模板、vibe 模板导航、数据服务模板选择、专用 skill 分发 | mycodex 维护、个人 skill 整理、项目初始化、scaffold/boilerplate、数据服务骨架 | 不作为普通实现/修复/审查默认入口；常驻工程规则放 `AGENTS.md` |
 | `product-spec-workflow` | PRD、需求确认、验收标准、测试用例、QA 计划、原型提示词 | 写 PRD、整理需求、产品到研发交付 | 聚合替代 myclaude 多个原生产品 skill |
 | `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | 只保留 issue 创建；实现/评审流程暂放 references |
 | `auto-skill` | 从文档/API/仓库材料提炼 reusable skill，重构已有 skill | 创建或优化 skill | 适合沉淀新能力 |
@@ -31,13 +31,13 @@
 | Skill | 能力 | 适合吸收方式 |
 |---|---|---|
 | `using-superpowers` | 强制每次对话先检查相关 skill，避免绕过流程 | 不建议原样安装；会与当前 Codex 系统 skill 选择规则重复且过强 |
-| `brainstorming` | 创意/功能开发前澄清需求、比较方案、写设计 spec | 可把“复杂功能先设计再实现”原则吸收到 `ppw-codex-engineer` |
+| `brainstorming` | 创意/功能开发前澄清需求、比较方案、写设计 spec | 可把“复杂功能先设计再实现”原则沉淀到 `AGENTS.md` 或产品/计划类专项 skill |
 | `writing-plans` | 基于 spec 写逐步实施计划，包含精确文件、测试、命令、commit | 值得吸收为复杂任务计划模板 |
 | `executing-plans` | 读取计划并逐任务执行，遇阻停止 | 与当前执行方式重叠；可做参考 |
 | `subagent-driven-development` | 每个独立任务派 fresh subagent，两阶段 review | 仅当用户明确要求多代理/并行时使用；不应默认强制 |
 | `dispatching-parallel-agents` | 多个独立问题并行派代理调查/修复 | 当前系统已有 subagent 规则；可吸收独立域拆分判断 |
 | `test-driven-development` | RED-GREEN-REFACTOR，先写失败测试，再最小实现 | 值得吸收为 bugfix/feature 的高风险路径规则 |
-| `systematic-debugging` | 四阶段根因排障：调查、模式、假设、验证 | 强烈建议吸收到 `ppw-codex-engineer` 的排障段 |
+| `systematic-debugging` | 四阶段根因排障：调查、模式、假设、验证 | 更适合沉淀到 `AGENTS.md`，必要时再独立成排障 skill |
 | `verification-before-completion` | 未运行新鲜验证命令前不得声称完成/通过 | 已与当前工作方式高度一致；可强化进质量门槛 |
 | `requesting-code-review` | 完成任务/合并前请求代码审查 | 可作为 review 输出习惯参考 |
 | `receiving-code-review` | 面对 review 不盲从，先验证反馈有效性 | 可吸收为审查反馈处理规则 |
@@ -48,7 +48,7 @@
 ### 对 superpowers 的建议
 
 - 不建议把 14 个 skill 全部活跃安装，会让 skill 列表膨胀并引入过强的“必须先设计/必须 worktree/必须用户审批”流程。
-- 建议把以下原则并入 `ppw-codex-engineer`：系统排障、验证前置、复杂任务先 spec/plan、TDD 红绿循环、并行任务只在独立域时派 subagent。
+- 建议把以下原则沉淀到 `AGENTS.md` 或专项 skill：系统排障、验证前置、复杂任务先 spec/plan、TDD 红绿循环、并行任务只在独立域时派 subagent。
 - 如后续用户明确想用完整 Superpowers 方法论，再考虑安装为独立 plugin，而不是拆散混入当前 skills。
 
 ## 候选：mineskystudio/code-guardrails-skill
@@ -57,7 +57,7 @@
 
 | Skill | 能力 | 适合吸收方式 |
 |---|---|---|
-| `code-guardrails` | 代码修改前的轻量工程护栏：架构边界、setup 边界、功能范围、取舍披露、bugfix 最小根因、重构边界、高风险先澄清 | 强烈建议直接吸收到 `ppw-codex-engineer`，不一定单独活跃安装 |
+| `code-guardrails` | 代码修改前的轻量工程护栏：架构边界、setup 边界、功能范围、取舍披露、bugfix 最小根因、重构边界、高风险先澄清 | 更适合沉淀到 `AGENTS.md` 或独立轻量 guardrails skill，不放进 `ppw-codex-engineer` |
 
 ### code-guardrails 的关键规则
 
@@ -70,13 +70,13 @@
 
 ### 对 code-guardrails 的建议
 
-- 这份 skill 很轻，和你的 `ppw-codex-engineer` 价值观高度一致。
-- 最佳方式：把其核心 guardrails 内置到 `ppw-codex-engineer`，而不是新增活跃 skill。
+- 这份 skill 很轻，和你的全局协作规则价值观高度一致。
+- 最佳方式：把其核心 guardrails 内置到 `AGENTS.md`；如果后续需要强触发，再独立成轻量 guardrails skill。
 - 如果未来希望可显式 `$code-guardrails` 调用，再单独安装也可，但当前没有必要。
 
 ## 下一步建议
 
-优先做一次 `ppw-codex-engineer` 增强，而不是安装更多活跃 skills：
+优先做一次全局规则和专项 skill 边界整理，而不是安装更多活跃 skills：
 
 - 加入 `code-guardrails` 的“最小护栏选择”。
 - 加入 `superpowers` 的“系统排障”和“验证前置”硬规则。

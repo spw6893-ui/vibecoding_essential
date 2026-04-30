@@ -14,7 +14,7 @@
 
 - 需要项目初始化、目录结构、GitHub 模板或工程框架建议时读取 `project-templates.md`。
 - 需要长期运行的数据采集服务、补数、巡检、血缘或质量治理模板时读取 `dataset-service-template.md`。
-- 需要个人工作流时使用 `$ppw-codex-engineer`。
+- 需要 PPW 项目脚手架、个人 skill 整理或本目录模板导航时使用 `$ppw-codex-engineer`。
 
 ## 已清理
 
