@@ -20,10 +20,6 @@
 
 AI 不再是孤立的，而是可以互相感知、通讯、控制的集群。
 
-## 详细文档
+## 当前落地方式
 
-👉 [深入了解AI蜂群协作](../../guides/playbook/AI蜂群协作-tmux多Agent协作系统.md)
-
-## 相关资源
-
-- [tmux快捷键大全](../../guides/playbook/tmux快捷键大全.md)
+个人 Codex 仓库不再保留上游 playbook 长文。需要 tmux 自动化、窗格巡检或多会话协作时，使用已安装的 `tmux-autopilot` skill。
