@@ -6,14 +6,14 @@
 
 ## 目录
 
-- `fundamentals/`：精选工程硬约束与数据服务模板。
 - `prompts.md`：提示词素材入口。
 - `project-templates.md`：从上游提炼的项目目录、GitHub 模板、Codex 配置基线和自动开发闭环建议。
+- `dataset-service-template.md`：以 dataset/contract/registry/runtime 为核心的数据服务架构模板。
 
 ## 使用规则
 
-- 需要工程硬约束或数据服务模板时读取 `fundamentals/`。
 - 需要项目初始化、目录结构、GitHub 模板或工程框架建议时读取 `project-templates.md`。
+- 需要长期运行的数据采集服务、补数、巡检、血缘或质量治理模板时读取 `dataset-service-template.md`。
 - 需要个人工作流时使用 `$ppw-codex-engineer`。
 
 ## 已清理

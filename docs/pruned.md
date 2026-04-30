@@ -50,6 +50,7 @@
 - `references/vibe-coding-cn/documents/guides/`：入门配置、编辑器快捷键、远程隧道、frp、Auggie、Gemini Headless 等资料与现有 skill 或个人环境重复，整体裁掉。
 - `references/vibe-coding-cn/documents/principles/philosophy/`：哲学长文和抽象方法论不直接支撑 Codex 执行，整体裁掉。
 - `references/vibe-coding-cn/documents/workflow/`：auto-dev-loop/Kiro/Hook 实验流程和 Markdown 转 EPUB 低频流程已由 `ppw-codex-engineer`、`harness`、`product-spec-workflow` 与 `project-templates.md` 摘要覆盖。
+- `references/vibe-coding-cn/fundamentals/`：泛化工程硬约束与现有 `AGENTS.md`、`ppw-codex-engineer` 重复，目录裁掉；仅保留数据服务模板为 `references/vibe-coding-cn/dataset-service-template.md`。
 - `workflow_engine/artifacts/`、`workflow_engine/state/`、`.installed_at`、`install-manifest.md`：运行状态与历史安装记录。
 - `AGENTS.md`、`.kiro/agents/`、`.claude-plugin/`、`agents/`、`hooks/` 类上游脚手架：不作为用户页面或运行入口暴露。
 
