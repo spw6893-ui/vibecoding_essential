@@ -17,6 +17,8 @@
 - `doc-coauthoring`
 - `docx`
 - `frontend-design`
+- `gh-issue-implement`（保留在 `refs/gh-flow/`，依赖已裁剪的 `dev` 工作流，不活跃）
+- `gh-pr-review`（保留在 `refs/gh-flow/`，依赖已裁剪的 `codeagent` 工作流，不活跃）
 - `hummingbot`
 - `internal-comms`
 - `markdown-to-epub`

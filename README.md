@@ -13,18 +13,22 @@ PPW 的个人 Codex 仓库。
 
 - `ppw-codex-engineer`：个人工程协作入口
 - `myclaude-product-workflow`：PRD、需求确认、测试用例、原型提示词
+- `gh-create-issue`：从 PRD/需求创建 GitHub issue 或 epic
 - `auto-skill`：创建和维护 skills
 - `ddd-doc-steward`：文档单一可信源
 - `headless-cli`：无头 CLI 自动化
 - `harness`：长任务检查点和恢复
+- `heroui-pro`：HeroUI/NextUI Pro 组件库与 Next.js 集成
 - `postgresql`：PostgreSQL
 - `timescaledb`：TimescaleDB
+- `ui-ux-pro-max`：UI/UX 设计知识库和设计系统生成器
 - `sop-generator`：SOP/流程文档
 - `telegram-dev`：Telegram Bot / Mini Apps
 - `tmux-autopilot`：tmux 自动化
 - `twscrape`：Twitter/X 数据抓取
 
 `refs/myclaude-skills/` 保留 myclaude 原生 skills 作为参考资料，不作为活跃技能暴露。
+`refs/gh-flow/` 保留 GitHub issue-to-PR / PR review 原始流程作为参考，不作为活跃技能暴露。
 
 ## 安装
 

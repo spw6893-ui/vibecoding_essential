@@ -20,3 +20,18 @@
 ## local
 
 - `ppw-codex-engineer`：本地个人工作流聚合 skill。
+
+## productivity local archives
+
+- Source: `/home/ppw/productivity/gh-flow-skill.zip`
+- 当前活跃保留：`gh-create-issue`。
+- 参考资料保留：`gh-issue-implement`、`gh-pr-review` 位于 `refs/gh-flow/`，不作为活跃 skill 暴露。
+- 裁剪理由：后两者依赖上游 `dev` / `codeagent` 工作流，当前个人 Codex 仓库已裁剪这些 Claude 专用或重运行时依赖，直接激活会制造不稳定触发。
+
+- Source: `/home/ppw/productivity/heroui-pro.zip`
+- 当前活跃保留：`heroui-pro`。
+- 兼容处理：删除 macOS 垃圾文件、`CLAUDE.md`、`.claude/settings.local.json`，并将 `~/.claude/skills` 路径改为 `~/.codex/skills`。
+
+- Source: `/home/ppw/productivity/.codex/skills/ui-ux-pro-max`
+- 当前活跃保留：`ui-ux-pro-max`。
+- 兼容处理：删除 `scripts/__pycache__/`，保留 CSV 数据库和 Python 检索脚本。
