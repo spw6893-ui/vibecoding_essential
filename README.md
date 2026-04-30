@@ -15,9 +15,7 @@ PPW 的个人 Codex 仓库。
 - `ppw-codex-engineer`：个人工程路由、项目脚手架和工程模板导航
 - `product-spec-workflow`：PRD、需求确认、测试用例、原型提示词
 - `gh-create-issue`：从 PRD/需求创建 GitHub issue 或 epic
-- `auto-skill`：创建和维护 skills
 - `ddd-doc-steward`：文档单一可信源
-- `headless-cli`：无头 CLI 自动化
 - `harness`：长任务检查点和恢复
 - `heroui-pro`：HeroUI/NextUI Pro 组件库与 Next.js 集成
 - `postgresql`：PostgreSQL
@@ -114,7 +112,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-external-repos.ps1
 ## 维护原则
 
 - 少而精，避免 skill 数量膨胀。
-- 新 skill 必须有明确高频用途，否则只放进 `references/`。
+- 新 skill 必须有明确高频用途，否则只放进 `references/`；创建或维护 skill 优先用系统 `skill-creator`。
 - `SKILL.md` 保持短，长模板放 `references/`。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
 - 外部来源要记录在 `docs/sources.md`，但不要提交完整外部仓库或运行状态。

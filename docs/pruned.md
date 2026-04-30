@@ -3,6 +3,7 @@
 ## 已裁剪
 
 - `algorithmic-art`
+- `auto-skill`（与系统 `skill-creator`/`skill-installer` 重叠，且包含旧路径与外部工具包装）
 - `brand-guidelines`
 - `browser`
 - `canvas-design`
@@ -19,6 +20,7 @@
 - `frontend-design`
 - `gh-issue-implement`（保留在 `references/gh-flow/`，依赖已裁剪的 `dev` 工作流，不活跃）
 - `gh-pr-review`（保留在 `references/gh-flow/`，依赖已裁剪的 `codeagent` 工作流，不活跃）
+- `headless-cli`（低频且权限风险较高；需要时直接使用 CLI 命令或临时脚本）
 - `hummingbot`
 - `internal-comms`
 - `markdown-to-epub`

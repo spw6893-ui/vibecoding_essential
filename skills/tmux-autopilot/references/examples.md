@@ -36,26 +36,18 @@ echo "audit pipes enabled under /tmp/*-ai-hub-*.log"
 ```
 - 用于长跑任务或多 AI 协作时保留证据；任务结束后记得 `tmux pipe-pane -t <p> -o cat` 关闭。
 
-## 用例 3：Skill Seeker 抓取 oh-my-tmux 文档并生成补充参考
+## 用例 3：刷新 oh-my-tmux 参考资料
 
-> 目的：在需要更全面文档时，用仓库自带的 `Skill_Seekers-development` 自动抓取 gpakosz/.tmux 与 README，生成扩展参考文件，再手动筛选进 `references/`。
+> 目的：在需要更全面文档时，查看本地固定版本的上游仓库更新，再手动筛选稳定内容进 `references/`。
 
 ```bash
 repo_root="$(git rev-parse --show-toplevel)"
-cd "$repo_root/assets/repos/Skill_Seekers-development"
-# 准备 Python 环境（如未安装）
-uv tool install skill-seekers  # 或 pip install skill-seekers
-
-# 直接抓取 GitHub 仓库并生成 skill 雏形
-skill-seekers github --repo gpakosz/.tmux --name tmux-oh-my --output /tmp/skill-out
-
-# 可选：抓取 README 站点或 PDF
-# skill-seekers scrape --url https://github.com/gpakosz/.tmux --name tmux-oh-my-web --async
-
-# 产物：/tmp/skill-out/tmux-oh-my.zip
-# 解压后挑选与 tmux-autopilot 相关的 API/快捷键，整理到 references/api.md 或 examples.md
+git -C "$repo_root/assets/repos/.tmux" fetch --all --tags --prune
+git -C "$repo_root/assets/repos/.tmux" log --oneline -5
+git -C "$repo_root/assets/repos/tmux" fetch --all --tags --prune
+git -C "$repo_root/assets/repos/tmux" log --oneline -5
 ```
-- 这样满足“严选来源 + 自动化抓取”要求，后续人工抽取精华补入本技能。
+- 只把稳定、可验证、常用的快捷键/配置项手工合并到 `references/api.md` 或 `references/troubleshooting.md`，不要直接导入整份上游 README。
 
 ## 用例 4：多 AI 工作台一键启动（命令行版）
 

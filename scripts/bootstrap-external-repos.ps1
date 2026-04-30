@@ -39,13 +39,6 @@ function Clone-Or-Checkout {
 }
 
 Clone-Or-Checkout ".tmux" "https://github.com/gpakosz/.tmux.git" "87dcd13a28aeb5f18baee630e24b3f5765ae3a4f"
-Clone-Or-Checkout "Skill_Seekers-development" "https://github.com/yusufkaraaslan/Skill_Seekers.git" "26638b248279a3b001b651475e0f28975f5ff069"
-Clone-Or-Checkout "claude-official-skills" "https://github.com/anthropics/skills.git" "1ed29a03dc852d30fa6ef2ca53a67dc2c2c563"
 Clone-Or-Checkout "tmux" "https://github.com/tmux/tmux.git" "615c27c11789948df2db09e113e882f82dfb3e1c"
-
-$SkillSeekers = Join-Path $TargetDir "Skill_Seekers-development"
-if (Test-Path -LiteralPath (Join-Path $SkillSeekers ".git")) {
-    git -C $SkillSeekers submodule update --init --recursive
-}
 
 Write-Host "外部依赖已准备完成: $TargetDir"

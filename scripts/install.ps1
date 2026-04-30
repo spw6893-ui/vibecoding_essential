@@ -26,10 +26,10 @@ function Remove-PathIfExists {
 
 if ($Prune) {
     $PrunedSkills = @(
-        "algorithmic-art", "brand-guidelines", "browser", "canvas-design", "ccxt",
+        "algorithmic-art", "auto-skill", "brand-guidelines", "browser", "canvas-design", "ccxt",
         "claude-code-guide", "claude-cookbooks", "codeagent", "coingecko",
         "cryptofeed", "dev", "do", "doc-coauthoring", "docx", "frontend-design",
-        "gh-issue-implement", "gh-pr-review", "hummingbot", "internal-comms",
+        "gh-issue-implement", "gh-pr-review", "headless-cli", "hummingbot", "internal-comms",
         "markdown-to-epub", "mcp-builder", "myclaude-product-workflow", "omo",
         "pdf", "polymarket", "pptx", "product-requirements",
         "prototype-prompt-generator", "proxychains", "skill-install",

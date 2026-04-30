@@ -9,9 +9,7 @@
 | `ppw-codex-engineer` | 个人工程路由：Codex 配置治理、项目框架模板、工程模板导航、数据服务模板选择、专用 skill 分发 | mycodex 维护、个人 skill 整理、项目初始化、scaffold/boilerplate、数据服务骨架 | 不作为普通实现/修复/审查默认入口；常驻工程规则放 `AGENTS.md` |
 | `product-spec-workflow` | PRD、需求确认、验收标准、测试用例、QA 计划、原型提示词 | 写 PRD、整理需求、产品到研发交付 | 聚合替代 myclaude 多个原生产品 skill |
 | `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | 只保留 issue 创建；实现/评审流程暂放 references |
-| `auto-skill` | 从文档/API/仓库材料提炼 reusable skill，重构已有 skill | 创建或优化 skill | 适合沉淀新能力 |
 | `ddd-doc-steward` | 文档驱动开发，生成/更新 SSOT 文档并做一致性检查 | 文档与代码同步、补齐架构/集成/功能文档 | 强调证据，无法推导时标注待确认 |
-| `headless-cli` | Gemini/Claude/Codex CLI 无交互批处理与多模型编排 | 批量翻译、审查、模型对比、后台执行 | 注意不要泄露密钥和个人数据 |
 | `harness` | 多会话长任务检查点、恢复、依赖管理 | 长任务、跨会话、失败恢复 | 更偏长周期任务治理 |
 | `heroui-pro` | HeroUI/NextUI Pro 组件库、Next.js App Router 集成、组件搜索 | HeroUI、NextUI、Dashboard、SaaS、AI chat、落地页 | 活跃保留；含本地组件资源 |
 | `ui-ux-pro-max` | UI/UX 知识库、设计系统生成、配色/字体/UX/技术栈建议 | UI 设计、视觉优化、落地页、Dashboard、移动端 | 可配合 `heroui-pro` 使用 |
@@ -43,7 +41,7 @@
 | `receiving-code-review` | 面对 review 不盲从，先验证反馈有效性 | 可吸收为审查反馈处理规则 |
 | `using-git-worktrees` | 开 feature 前创建隔离 worktree 和分支 | 不默认安装；当前用户未要求 worktree 工作流 |
 | `finishing-a-development-branch` | 完成后验证、选择 merge/PR/保留/丢弃 | 可作为分支收尾参考 |
-| `writing-skills` | 用 TDD 思路写 skill，先 pressure test 再写/改 skill | 与 `auto-skill`、`skill-creator` 重叠；只做参考 |
+| `writing-skills` | 用 TDD 思路写 skill，先 pressure test 再写/改 skill | 与系统 `skill-creator` 重叠；只做参考 |
 
 ### 对 superpowers 的建议
 

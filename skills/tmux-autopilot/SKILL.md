@@ -166,11 +166,11 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 
 ## Quality Gate
 
-发布前自检（配合 `auto-skill` 校验脚本）：
+发布前自检：
 1. `description` 已含“capture-pane/send-keys/蜂群”等触发关键词。
 2. 「When to Use」「Not For」已覆盖边界；前缀/版本要求清晰。
 3. Quick Reference ≤ 20 条且均可直接执行；无长篇解释。
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. 运行 `assets/skills/auto-skill/scripts/validate-skill.sh assets/skills/tmux-autopilot` 通过。
+7. 运行仓库级 `./scripts/verify.sh` 通过。
