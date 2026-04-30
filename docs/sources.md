@@ -4,8 +4,10 @@
 
 - Source: `https://github.com/tukuaiai/vibe-coding-cn`
 - Imported commit: `55d6d0a`
+- Local repo: `repos/vibe-coding-cn` at `ee22d79`
 - 用途：中文 Vibe Coding 方法论、部分工程/文档/自动化 skills。
 - 当前保留：`auto-skill`、`ddd-doc-steward`、`headless-cli`、`postgresql`、`sop-generator`、`telegram-dev`、`timescaledb`、`tmux-autopilot`、`twscrape`。
+- 项目模板摘录：`refs/vibe-coding-cn/project-templates.md`。
 
 ## myclaude
 
