@@ -28,28 +28,28 @@
 - `polymarket`
 - `pptx`
 - `proxychains`
-- `product-requirements`（由 `myclaude-product-workflow` 聚合覆盖）
-- `prototype-prompt-generator`（由 `myclaude-product-workflow` 聚合覆盖）
+- `product-requirements`（由 `product-spec-workflow` 聚合覆盖）
+- `prototype-prompt-generator`（由 `product-spec-workflow` 聚合覆盖）
 - `skill-install`（安装逻辑不作为活跃 skill 暴露）
 - `slack-gif-creator`
 - `snapdom`
 - `sparv`
 - `theme-factory`
-- `test-cases`（由 `myclaude-product-workflow` 聚合覆盖）
+- `test-cases`（由 `product-spec-workflow` 聚合覆盖）
 - `web-artifacts-builder`
 - `webapp-testing`
 - `xlsx`
 
 ## 已清理的参考资料
 
-- `refs/myclaude-skills/`：原始 skill 副本已由 `myclaude-product-workflow` 聚合覆盖。
+- `refs/myclaude-skills/`：原始 skill 副本已由 `product-spec-workflow` 聚合覆盖。
 - `refs/vibe-coding-cn/config-template/`：上游个人化 Codex 配置模板，容易污染当前全局配置。
 - `refs/vibe-coding-cn/documents/case-studies/polymarket-dev/`：用户明确不需要 Polymarket。
 - `refs/vibe-coding-cn/documents/case-studies/`：项目案例长文和一次性 prompt 复用价值低，不进入个人 Codex kit。
 - `refs/vibe-coding-cn/documents/guides/playbook/ProxyCast配置文档.md`：代理凭证转换运行时，不纳入个人 Codex 仓库。
 - `refs/vibe-coding-cn/documents/guides/`：入门配置、编辑器快捷键、远程隧道、frp、Auggie、Gemini Headless 等资料与现有 skill 或个人环境重复，整体裁掉。
 - `refs/vibe-coding-cn/documents/principles/philosophy/`：哲学长文和抽象方法论不直接支撑 Codex 执行，整体裁掉。
-- `refs/vibe-coding-cn/documents/workflow/`：auto-dev-loop/Kiro/Hook 实验流程和 Markdown 转 EPUB 低频流程已由 `ppw-codex-engineer`、`harness`、`myclaude-product-workflow` 与 `project-templates.md` 摘要覆盖。
+- `refs/vibe-coding-cn/documents/workflow/`：auto-dev-loop/Kiro/Hook 实验流程和 Markdown 转 EPUB 低频流程已由 `ppw-codex-engineer`、`harness`、`product-spec-workflow` 与 `project-templates.md` 摘要覆盖。
 - `workflow_engine/artifacts/`、`workflow_engine/state/`、`.installed_at`、`install-manifest.md`：运行状态与历史安装记录。
 - `AGENTS.md`、`.kiro/agents/`、`.claude-plugin/`、`agents/`、`hooks/` 类上游脚手架：不作为用户页面或运行入口暴露。
 

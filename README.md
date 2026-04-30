@@ -13,7 +13,7 @@ PPW 的个人 Codex 仓库。
 ## 当前 Skill
 
 - `ppw-codex-engineer`：个人工程协作入口
-- `myclaude-product-workflow`：PRD、需求确认、测试用例、原型提示词
+- `product-spec-workflow`：PRD、需求确认、测试用例、原型提示词
 - `gh-create-issue`：从 PRD/需求创建 GitHub issue 或 epic
 - `auto-skill`：创建和维护 skills
 - `ddd-doc-steward`：文档单一可信源
@@ -28,7 +28,7 @@ PPW 的个人 Codex 仓库。
 - `tmux-autopilot`：tmux 自动化
 - `twscrape`：Twitter/X 数据抓取
 
-`myclaude` 的 PRD、测试、原型提示词等内容已提炼进 `myclaude-product-workflow`，不再保留原始 skill 副本。
+`myclaude` 的 PRD、测试、原型提示词等内容已提炼进 `product-spec-workflow`，不再保留原始 skill 副本。
 `refs/gh-flow/` 保留 GitHub issue-to-PR / PR review 原始流程作为参考，不作为活跃技能暴露。
 
 ## 安装

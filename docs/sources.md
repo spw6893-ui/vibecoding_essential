@@ -15,8 +15,8 @@
 - Imported commit: `c4a1567`
 - License: AGPL-3.0
 - 用途：PRD、需求确认、测试用例、UI/UX 原型提示词、BMAD/requirements 方法论。
-- 当前活跃保留：`harness`、`myclaude-product-workflow`。
-- 参考资料处理：不再保留上游原始 skill 副本；PRD、测试、BMAD/requirements、原型提示词等关键内容已收敛进 `skills/myclaude-product-workflow/references/`。
+- 当前活跃保留：`harness`、`product-spec-workflow`。
+- 参考资料处理：不再保留上游原始 skill 副本；PRD、测试、BMAD/requirements、原型提示词等关键内容已收敛进 `skills/product-spec-workflow/references/`。
 - 兼容处理：上游 skill 中 `~/.claude/skills` 与 `.claude/...` 路径已改为 `~/.codex/skills` 与 `.codex/...`。
 
 ## local

@@ -1,11 +1,11 @@
 ---
-name: myclaude-product-workflow
-description: "从 stellarlinkco/myclaude 提炼的产品研发文档技能：用于 PRD/产品需求、需求确认、验收标准、测试用例、QA 计划、UI/UX 原型提示词、BMAD/requirements 工作流裁剪版。触发于用户要求写 PRD、整理需求、生成测试用例、设计原型提示词、把想法变成可执行规格或做产品到研发交付计划。"
+name: product-spec-workflow
+description: "产品规格与研发交付文档技能：用于 PRD/产品需求、需求确认、验收标准、测试用例、QA 计划、UI/UX 原型提示词、BMAD/requirements 工作流裁剪版。触发于用户要求写 PRD、整理需求、生成测试用例、设计原型提示词、把想法变成可执行规格或做产品到研发交付计划。"
 ---
 
-# MyClaude Product Workflow
+# Product Spec Workflow
 
-本技能把 `stellarlinkco/myclaude` 中和产品研发文档相关的内容转换为 Codex 可用流程。它不安装 Claude 专用运行时，不调用 `codeagent-wrapper`，只保留可迁移的方法论、评分门槛和文档模板。
+本技能把产品研发文档相关内容转换为 Codex 可用流程。其参考资料来自 `stellarlinkco/myclaude` 的裁剪版，但不安装 Claude 专用运行时，不调用 `codeagent-wrapper`，只保留可迁移的方法论、评分门槛和文档模板。
 
 来源与许可证信息见 `references/source.md`。
 

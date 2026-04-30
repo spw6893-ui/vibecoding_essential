@@ -22,11 +22,13 @@ done
 mkdir -p "$CODEX_HOME/skills" "$CODEX_HOME/references"
 
 if [[ "$PRUNE" -eq 1 ]]; then
-  for name in algorithmic-art brand-guidelines browser canvas-design ccxt claude-code-guide claude-cookbooks codeagent coingecko cryptofeed dev do doc-coauthoring docx frontend-design gh-issue-implement gh-pr-review hummingbot internal-comms markdown-to-epub mcp-builder omo pdf polymarket pptx product-requirements prototype-prompt-generator proxychains skill-install slack-gif-creator snapdom sparv test-cases theme-factory web-artifacts-builder webapp-testing xlsx; do
+  for name in algorithmic-art brand-guidelines browser canvas-design ccxt claude-code-guide claude-cookbooks codeagent coingecko cryptofeed dev do doc-coauthoring docx frontend-design gh-issue-implement gh-pr-review hummingbot internal-comms markdown-to-epub mcp-builder myclaude-product-workflow omo pdf polymarket pptx product-requirements prototype-prompt-generator proxychains skill-install slack-gif-creator snapdom sparv test-cases theme-factory web-artifacts-builder webapp-testing xlsx; do
     rm -rf "$CODEX_HOME/skills/$name"
   done
 fi
 
+# 清理本仓库历史命名，避免重命名后本机同时出现新旧两个 skill。
+rm -rf "$CODEX_HOME/skills/myclaude-product-workflow"
 rsync -a "$ROOT_DIR/skills/" "$CODEX_HOME/skills/"
 
 # 仅清理本仓库管理的参考目录，避免删除用户自己的 references。
