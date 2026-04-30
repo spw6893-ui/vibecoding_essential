@@ -26,6 +26,34 @@
 
 > 判断规则：**如果服务的核心交付物是“稳定数据集”，而不是“页面”或“接口”，就优先用这套模板。**
 
+## 落地级别
+
+### 最小模式
+
+适合刚启动的单数据集服务，先保证结构方向正确，不一开始铺满复杂 runtime。
+
+```text
+<service-root>/
+├── README.md
+├── AGENTS.md
+├── scripts/verify.sh
+└── src/<service_name>/
+    ├── config.py
+    ├── registry.py
+    └── datasets/
+        └── <dataset_key>/
+            ├── contract.py
+            ├── collect.py
+            ├── writer.py
+            └── README.md
+```
+
+最小模式必须有 `contract.py` 和 `registry.py`，可以暂时没有独立 runtime，但不能让 dataset 清单散落在脚本里。
+
+### 标准模式
+
+适合多 dataset、长期运行、需要补数/修复/巡检的数据服务。使用下文完整目录模板，补齐 `service_entry.py`、`runtime/`、`backfill.py`、`repair.py`、`validate.py`。
+
 ## 3) 设计目标
 
 - 让 **dataset** 成为开发、调度、部署、运维、血缘、权限、生命周期管理的统一边界
@@ -175,6 +203,50 @@ partition_key
 schema_version
 sensitivity
 ```
+
+### 推荐 registry 形态
+
+registry 不要只是字符串列表，至少应是可被代码、文档和验证脚本共同读取的结构化对象。
+
+```python
+DATASETS = {
+    "example_events": {
+        "resource_id": "source.example.events",
+        "runtime_status": "active",
+        "physical_table": "example_events",
+        "group": "events",
+        "source_kind": "api",
+        "collect_supported": True,
+        "backfill_supported": True,
+        "repair_supported": False,
+        "default_enabled": True,
+        "owner": "data",
+        "schema_version": "1",
+    },
+}
+```
+
+### 推荐 contract 形态
+
+contract 需要表达“数据是什么”，不应该依赖 collect 代码倒推。
+
+```python
+DATASET_KEY = "example_events"
+RESOURCE_ID = "source.example.events"
+PHYSICAL_TABLE = "example_events"
+PRIMARY_KEY = ("event_id",)
+TIME_COLUMN = "event_time"
+SCHEMA_VERSION = "1"
+
+FIELDS = {
+    "event_id": "source event id, unique within dataset",
+    "event_time": "event timestamp in UTC",
+    "payload": "raw or normalized event payload",
+    "ingested_at": "ingestion timestamp in UTC",
+}
+```
+
+如果项目使用 Pydantic、SQLAlchemy、dbt、SQL DDL 或 Arrow schema，也可以把这些定义作为 contract 的实现形式，但字段语义、主键、时间列和版本必须明确。
 
 ### 为什么 registry 必须存在
 
@@ -455,17 +527,16 @@ scripts/
         └── _reserved/
 ```
 
-## 16) 仓库内参考实现
+## 16) 落地验收标准
 
-当前仓库里，最接近这套模板的落地参考是：
-
-- `core/market/binance/src/binance/`
-- `core/market/binance/src/binance/datasets/*`
-- `core/market/binance/src/binance/registry.py`
-- `core/market/binance/src/binance/service_entry.py`
-- `core/market/binance/src/binance/runtime/*`
-
-> 说明：这份模板不是说“以后每个服务都必须和 Binance 长得一模一样”，而是说：**以后凡是新的数据采集服务，都优先按这个方法组织，再根据数据源特性做局部裁剪。**
+- `registry.py` 能列出所有 dataset，并标明 active/backfill_only/reserved/disabled。
+- 每个 active dataset 有 `contract.py`、`writer.py`、`collect.py` 或 `backfill.py`。
+- `contract.py` 明确主键/幂等键、时间列、字段语义、schema version。
+- `writer.py` 明确去重、冲突处理、批量写入和失败策略。
+- `validate.py` 或验证脚本覆盖空写、重复写、时间边界和幂等。
+- `service_entry.py` 或 `scripts/start.sh` 是唯一推荐运行入口。
+- `scripts/verify.sh` 能执行结构检查、语法检查和最小 dataset smoke test。
+- README 能说明每个 dataset 的输入、输出、刷新频率和数据质量边界。
 
 ## 17) 一句话结论
 
