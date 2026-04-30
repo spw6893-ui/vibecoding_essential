@@ -4,7 +4,21 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-bash -n scripts/install.sh
+for script in scripts/*.sh; do
+  bash -n "$script"
+done
+
+if command -v pwsh >/dev/null 2>&1; then
+  for script in scripts/*.ps1; do
+    pwsh -NoProfile -Command "[void][System.Management.Automation.Language.Parser]::ParseFile('$script', [ref]\$null, [ref]\$null)"
+  done
+elif command -v powershell >/dev/null 2>&1; then
+  for script in scripts/*.ps1; do
+    powershell -NoProfile -Command "[void][System.Management.Automation.Language.Parser]::ParseFile('$script', [ref]\$null, [ref]\$null)"
+  done
+else
+  echo "skip PowerShell syntax check: pwsh/powershell not found"
+fi
 
 if find skills -path '*/agents/openai.yaml' -print | grep -q .; then
   echo "发现 agents/openai.yaml，当前策略是不暴露用户页面入口" >&2

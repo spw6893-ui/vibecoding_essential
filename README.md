@@ -33,7 +33,7 @@ PPW 的个人 Codex 仓库。
 
 ## 安装
 
-### 一键安装
+### Linux / macOS
 
 默认方式，适合公开或私有仓库，只要当前机器的 `git` 有访问权限：
 
@@ -54,6 +54,27 @@ bash ~/.codex/repos/vibecoding_essential/scripts/bootstrap-external-repos.sh
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.sh)" -- --prune
 ```
 
+### Windows PowerShell
+
+默认方式，适合公开或私有仓库，只要当前 PowerShell 能通过 `git` 访问仓库：
+
+```powershell
+git clone https://github.com/spw6893-ui/vibecoding_essential.git "$HOME\.codex\repos\vibecoding_essential" 2>$null; if ($LASTEXITCODE -ne 0) { git -C "$HOME\.codex\repos\vibecoding_essential" pull --ff-only }
+powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essential\scripts\install.ps1" -Prune
+```
+
+如果要同时补齐部分 skill 需要的外部依赖仓库：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essential\scripts\bootstrap-external-repos.ps1"
+```
+
+如果仓库改成公开仓库，也可以用 raw 脚本一条命令安装：
+
+```powershell
+$p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.ps1 -OutFile $p; powershell -ExecutionPolicy Bypass -File $p -Prune
+```
+
 安装后重开 Codex 会话，让技能发现列表刷新。
 
 ### 本地仓库安装
@@ -62,7 +83,13 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_es
 ./scripts/install.sh
 ```
 
-默认安装到 `${CODEX_HOME:-$HOME/.codex}`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `~/.codex/config.toml` 或 `~/.codex/AGENTS.md`。
+Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Prune
+```
+
+默认安装到 `${CODEX_HOME:-$HOME/.codex}`，Windows 下默认是 `$HOME\.codex`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `config.toml` 或 `AGENTS.md`。
 
 当前机器的全局 Codex 配置快照保存在 `config/codex/`。其中 `global-agents.snapshot.md` 是 `~/.codex/AGENTS.md` 的备份副本，不作为本仓库运行规则；不会被 `install.sh` 自动写回。
 
@@ -76,6 +103,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_es
 
 ```bash
 ./scripts/bootstrap-external-repos.sh
+```
+
+Windows 对应命令：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-external-repos.ps1
 ```
 
 ## 维护原则

@@ -26,6 +26,18 @@ done
 
 mkdir -p "$CODEX_HOME/skills" "$CODEX_HOME/references"
 
+sync_dir_contents() {
+  local src="$1"
+  local dest="$2"
+
+  if command -v rsync >/dev/null 2>&1; then
+    rsync -a "$src/" "$dest/"
+  else
+    mkdir -p "$dest"
+    cp -a "$src/." "$dest/"
+  fi
+}
+
 if [[ "$PRUNE" -eq 1 ]]; then
   for name in algorithmic-art brand-guidelines browser canvas-design ccxt claude-code-guide claude-cookbooks codeagent coingecko cryptofeed dev do doc-coauthoring docx frontend-design gh-issue-implement gh-pr-review hummingbot internal-comms markdown-to-epub mcp-builder myclaude-product-workflow omo pdf polymarket pptx product-requirements prototype-prompt-generator proxychains skill-install slack-gif-creator snapdom sparv test-cases theme-factory web-artifacts-builder webapp-testing xlsx; do
     rm -rf "$CODEX_HOME/skills/$name"
@@ -34,10 +46,10 @@ fi
 
 # 清理本仓库历史命名，避免重命名后本机同时出现新旧两个 skill。
 rm -rf "$CODEX_HOME/skills/myclaude-product-workflow"
-rsync -a "$ROOT_DIR/skills/" "$CODEX_HOME/skills/"
+sync_dir_contents "$ROOT_DIR/skills" "$CODEX_HOME/skills"
 
 # 仅清理本仓库管理的参考目录，避免删除用户自己的 references。
 rm -rf "$CODEX_HOME/references/gh-flow" "$CODEX_HOME/references/vibe-coding-cn" "$CODEX_HOME/references/engineering-templates" "$CODEX_HOME/references/myclaude-skills"
-rsync -a "$ROOT_DIR/references/" "$CODEX_HOME/references/"
+sync_dir_contents "$ROOT_DIR/references" "$CODEX_HOME/references"
 
 echo "mycodex 已安装到: $CODEX_HOME"
