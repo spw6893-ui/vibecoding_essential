@@ -22,6 +22,7 @@
 ## local
 
 - `ppw-codex-engineer`：本地个人工程路由和项目脚手架 skill。
+- `config/codex/global-agents.snapshot.md`：当前机器 `~/.codex/AGENTS.md` 的快照备份，不作为本仓库 active `AGENTS.md`。
 
 ## productivity local archives
 

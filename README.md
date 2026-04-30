@@ -39,7 +39,7 @@ PPW 的个人 Codex 仓库。
 
 默认安装到 `${CODEX_HOME:-$HOME/.codex}`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `~/.codex/config.toml` 或 `~/.codex/AGENTS.md`。
 
-当前机器的全局 Codex 配置快照保存在 `config/codex/`。这只是备份和迁移参考，不会被 `install.sh` 自动写回。
+当前机器的全局 Codex 配置快照保存在 `config/codex/`。其中 `global-agents.snapshot.md` 是 `~/.codex/AGENTS.md` 的备份副本，不作为本仓库运行规则；不会被 `install.sh` 自动写回。
 
 如果要删除之前裁掉的旧 skill 残留：
 
