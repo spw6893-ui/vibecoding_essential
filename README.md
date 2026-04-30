@@ -6,7 +6,7 @@ PPW 的个人 Codex 仓库。
 
 - `skills/`：当前保留的 Codex skills
 - `references/`：从外部仓库提炼出来的少量参考资料，不保存完整上游镜像
-- `config/`：安全的 Codex 配置示例，不含真实密钥和机器完整配置
+- `config/`：Codex 配置示例与当前机器配置快照
 - `docs/`：来源、裁剪记录、维护说明
 - `scripts/`：安装和同步脚本
 
@@ -38,6 +38,8 @@ PPW 的个人 Codex 仓库。
 ```
 
 默认安装到 `${CODEX_HOME:-$HOME/.codex}`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `~/.codex/config.toml` 或 `~/.codex/AGENTS.md`。
+
+当前机器的全局 Codex 配置快照保存在 `config/codex/`。这只是备份和迁移参考，不会被 `install.sh` 自动写回。
 
 如果要删除之前裁掉的旧 skill 残留：
 
