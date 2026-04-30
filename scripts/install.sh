@@ -10,6 +10,11 @@ for arg in "$@"; do
     --prune)
       PRUNE=1
       ;;
+    -h|--help)
+      echo "用法: $0 [--prune]" >&2
+      echo "说明: 本脚本只同步 skills/ 与 references/，不会覆盖 ~/.codex/config.toml 或 ~/.codex/AGENTS.md" >&2
+      exit 0
+      ;;
     *)
       echo "未知参数: $arg" >&2
       echo "用法: $0 [--prune]" >&2

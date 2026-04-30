@@ -33,6 +33,35 @@ PPW 的个人 Codex 仓库。
 
 ## 安装
 
+### 一键安装
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.sh)"
+```
+
+如果要同时删除本仓库已裁掉的旧 skill 残留：
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.sh)" -- --prune
+```
+
+如果要同时补齐部分 skill 需要的外部依赖仓库：
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.sh)" -- --with-external-repos
+```
+
+如果当前环境没有 `curl`，用 `git` 安装：
+
+```bash
+git clone https://github.com/spw6893-ui/vibecoding_essential.git ~/.codex/repos/vibecoding_essential
+bash ~/.codex/repos/vibecoding_essential/scripts/install.sh --prune
+```
+
+安装后重开 Codex 会话，让技能发现列表刷新。
+
+### 本地仓库安装
+
 ```bash
 ./scripts/install.sh
 ```
@@ -46,8 +75,6 @@ PPW 的个人 Codex 仓库。
 ```bash
 ./scripts/install.sh --prune
 ```
-
-安装后重开 Codex 会话，让技能发现列表刷新。
 
 如果要补齐部分 skill 需要的外部依赖仓库：
 
