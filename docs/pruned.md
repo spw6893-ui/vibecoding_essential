@@ -4,12 +4,16 @@
 
 - `algorithmic-art`
 - `brand-guidelines`
+- `browser`（保留在 `refs/myclaude-skills/`，不活跃）
 - `canvas-design`
 - `ccxt`
 - `claude-code-guide`
 - `claude-cookbooks`
+- `codeagent`（保留在 `refs/myclaude-skills/`，不活跃）
 - `coingecko`
 - `cryptofeed`
+- `dev`（保留在 `refs/myclaude-skills/`，不活跃）
+- `do`（保留在 `refs/myclaude-skills/`，不活跃）
 - `doc-coauthoring`
 - `docx`
 - `frontend-design`
@@ -17,13 +21,19 @@
 - `internal-comms`
 - `markdown-to-epub`
 - `mcp-builder`
+- `omo`（保留在 `refs/myclaude-skills/`，不活跃）
 - `pdf`
 - `polymarket`
 - `pptx`
 - `proxychains`
+- `product-requirements`（由 `myclaude-product-workflow` 聚合覆盖）
+- `prototype-prompt-generator`（由 `myclaude-product-workflow` 聚合覆盖）
+- `skill-install`（安装逻辑不作为活跃 skill 暴露）
 - `slack-gif-creator`
 - `snapdom`
+- `sparv`（保留在 `refs/myclaude-skills/`，不活跃）
 - `theme-factory`
+- `test-cases`（由 `myclaude-product-workflow` 聚合覆盖）
 - `web-artifacts-builder`
 - `webapp-testing`
 - `xlsx`

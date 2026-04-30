@@ -1,4 +1,0 @@
-interface:
-  display_name: "PPW Codex 工程协作"
-  short_description: "中文优先的个人工程工作流：项目分析、最小修改、验证闭环与领域 skill 路由。"
-  default_prompt: "使用 $ppw-codex-engineer 按我的个人 Codex 工程工作流处理这个任务：先分析项目，再做最小必要修改，并给出验证结果。"

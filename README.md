@@ -14,25 +14,17 @@ PPW 的个人 Codex 仓库。
 - `ppw-codex-engineer`：个人工程协作入口
 - `myclaude-product-workflow`：PRD、需求确认、测试用例、原型提示词
 - `auto-skill`：创建和维护 skills
-- `browser`：Chrome DevTools Protocol 浏览器自动化
-- `codeagent`：codeagent-wrapper 多后端任务执行说明
 - `ddd-doc-steward`：文档单一可信源
-- `dev`：轻量端到端开发工作流
-- `do`：结构化功能开发编排
 - `headless-cli`：无头 CLI 自动化
 - `harness`：长任务检查点和恢复
-- `omo`：多智能体路由工作流
 - `postgresql`：PostgreSQL
-- `product-requirements`：交互式 PRD 生成
-- `prototype-prompt-generator`：UI/UX 原型提示词生成
-- `skill-install`：GitHub skill 安装流程
-- `sparv`：Specify → Plan → Act → Review → Vault 工作流
 - `timescaledb`：TimescaleDB
 - `sop-generator`：SOP/流程文档
 - `telegram-dev`：Telegram Bot / Mini Apps
 - `tmux-autopilot`：tmux 自动化
 - `twscrape`：Twitter/X 数据抓取
-- `test-cases`：从 PRD/需求生成测试用例
+
+`refs/myclaude-skills/` 保留 myclaude 原生 skills 作为参考资料，不作为活跃技能暴露。
 
 ## 安装
 

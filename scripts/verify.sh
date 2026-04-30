@@ -6,6 +6,12 @@ cd "$ROOT_DIR"
 
 bash -n scripts/install.sh
 
+if find skills -path '*/agents/openai.yaml' -print | grep -q .; then
+  echo "发现 agents/openai.yaml，当前策略是不暴露用户页面入口" >&2
+  find skills -path '*/agents/openai.yaml' -print
+  exit 1
+fi
+
 count="$(find skills -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l)"
 echo "skills: $count"
 
@@ -27,4 +33,3 @@ if git ls-files 2>/dev/null | grep -E 'auth|history|sqlite|\.env|log/' >/dev/nul
 fi
 
 echo "verify ok"
-
