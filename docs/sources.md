@@ -37,3 +37,15 @@
 - Source: `/home/ppw/productivity/.codex/skills/ui-ux-pro-max`
 - 当前活跃保留：`ui-ux-pro-max`。
 - 兼容处理：删除 `scripts/__pycache__/`，保留 CSV 数据库和 Python 检索脚本。
+
+## candidate repos
+
+- Source: `https://github.com/obra/superpowers.git`
+- Local repo: `repos/superpowers` at `6efe32c`
+- 用途：完整软件开发方法论 skills 候选，包括 brainstorm/spec、plans、TDD、systematic debugging、verification、subagent-driven-development 等。
+- 当前决策：暂不活跃安装，能力盘点见 `docs/skills-capabilities.md`；优先吸收高价值原则进 `ppw-codex-engineer`。
+
+- Source: `https://github.com/mineskystudio/code-guardrails-skill`
+- Local repo: `repos/code-guardrails-skill` at `fd952e0`
+- 用途：代码修改前的轻量工程护栏，防止架构漂移、范围蔓延、隐性 MVP 取舍和过早基础设施。
+- 当前决策：暂不单独活跃安装，建议内置到 `ppw-codex-engineer`。

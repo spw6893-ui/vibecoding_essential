@@ -53,3 +53,4 @@ PPW 的个人 Codex 仓库。
 - `SKILL.md` 保持短，长模板放 `references/`。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
 - 外部来源要记录在 `docs/sources.md`。
+- Skill 能力盘点与候选合并建议见 `docs/skills-capabilities.md`。
