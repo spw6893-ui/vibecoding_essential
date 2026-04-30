@@ -72,6 +72,24 @@
 - 最佳方式：把其核心 guardrails 内置到 `AGENTS.md`；如果后续需要强触发，再独立成轻量 guardrails skill。
 - 如果未来希望可显式 `$code-guardrails` 调用，再单独安装也可，但当前没有必要。
 
+## 候选：Python / Rust / Go 语言类 Skills
+
+Web 搜索到的语言类 skill 主要集中在 GitHub 上的 Claude/Codex skill 集合和个人最佳实践包，常见形态是 `python-*`、`rust-*`、`go-*`、`golang-pro`、`fastapi-*`、`polyglot-task-automation`。它们更像“语言规范清单”，不是强工具能力。
+
+| 语言 | 常见能力 | 是否建议活跃安装 |
+|---|---|---|
+| Python | uv/venv、ruff、mypy、pytest、FastAPI、包结构、类型注解、异常处理 | 暂不安装；当前由项目模板、真实配置和按需官方文档覆盖 |
+| Rust | Cargo、Clippy、rustfmt、Tokio async、错误处理、所有权/生命周期、并发测试 | 暂不安装；除非后续长期写 Rust 服务或 CLI |
+| Go | gofmt/go vet、golangci-lint、context、goroutine/channel、table-driven tests、race detector | 暂不安装；更适合写到具体 Go 项目的 `AGENTS.md` |
+| Polyglot | 多语言构建、lint、test、release 命令统一调度 | 暂不安装；触发面过宽，容易和 Codex 本身工程能力重复 |
+
+### 对语言类 skill 的建议
+
+- 不把 Python/Rust/Go 做成全局 active skill；这些规则太通用，会增加触发噪声。
+- 如果某个项目明确是 Python/Rust/Go，优先读取该项目的 `pyproject.toml`、`Cargo.toml`、`go.mod`、CI、Makefile 和本地 `AGENTS.md`，按项目事实执行。
+- 如果后续确实需要沉淀，建议放 `references/language-notes/`，或在具体项目仓库内放项目级 `AGENTS.md`，不要污染个人全局 skill 列表。
+- 只有高复用、工具链明确、触发边界窄的语言能力，才值得升级成 active skill。
+
 ## 下一步建议
 
 优先做一次全局规则和专项 skill 边界整理，而不是安装更多活跃 skills：

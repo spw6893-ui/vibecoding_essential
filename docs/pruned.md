@@ -42,6 +42,13 @@
 - `webapp-testing`
 - `xlsx`
 
+## 暂不安装的语言类 Skills
+
+- `python-*` / `python-best-practices` / `fastapi-*`：多数是 ruff、mypy、pytest、uv、FastAPI 项目结构等通用工程规则，和当前 `AGENTS.md`、`ppw-codex-engineer` 的项目模板能力重叠。遇到真实 Python 仓库时，优先读取项目配置和官方文档，而不是常驻安装语言 skill。
+- `rust-*` / `rust-best-practices` / `rust-async-patterns`：有价值的部分主要是 Tokio async、错误处理、Clippy、测试和并发模式；这些只在 Rust 项目中高频，当前个人 kit 不需要常驻触发。后续如长期写 Rust，可做成 `references/language-notes/rust.md` 或项目级 skill。
+- `go-*` / `golang-pro` / `go-best-practices`：核心价值是 `context.Context`、goroutine 生命周期、channel/worker pool、table-driven tests、race detector 和 `golangci-lint`。这些适合项目级 `AGENTS.md` 或仓库模板，不适合放入全局 active skills。
+- `polyglot-task-automation`：覆盖 Python/Rust/Go/Node/Java/Ruby 的统一构建、测试、lint、发布命令。对多语言 SDK 仓库有用，但会引入过宽触发面；当前用 `ppw-codex-engineer` 的项目框架路由和真实项目命令即可。
+
 ## 已清理的参考资料
 
 - `references/myclaude-skills/`：原始 skill 副本已由 `product-spec-workflow` 聚合覆盖。
@@ -65,3 +72,4 @@
 - 用户明确不需要的交易和代理类不保留。
 - 和当前已有系统技能重复的，不重复安装。
 - 可作为知识参考的内容放进 `references/` 或某个 skill 的 `references/`。
+- 语言类最佳实践不默认安装；只有当某门语言成为长期主战栈，且能沉淀出项目无关的高价值规则时，才新增为专项 skill。
