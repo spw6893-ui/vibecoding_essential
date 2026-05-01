@@ -7,7 +7,7 @@ PPW 的个人 Codex 仓库。
 - `skills/`：当前保留的 Codex skills
 - `references/`：从外部仓库提炼出来的少量参考资料，不保存完整上游镜像
 - `config/`：Codex 配置示例与当前机器配置快照
-- `docs/`：来源、能力盘点与维护说明
+- `docs/`：能力盘点与维护说明
 - `scripts/`：安装和同步脚本
 
 ## 当前 Skill
@@ -115,6 +115,5 @@ powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-external-repos.ps1
 - 新 skill 必须有明确高频用途，否则只放进 `references/`；创建或维护 skill 优先用系统 `skill-creator`。
 - `SKILL.md` 保持短，长模板放 `references/`。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
-- 外部来源要记录在 `docs/sources.md`，但不要提交完整外部仓库或运行状态。
 - Skill 能力盘点与候选合并建议见 `docs/skills-capabilities.md`。
 - `/home/ppw/ppw-codex-kit` 已归档，后续只维护本仓库。
