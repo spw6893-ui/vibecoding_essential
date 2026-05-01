@@ -116,4 +116,5 @@ powershell -ExecutionPolicy Bypass -File .\scripts\windows\bootstrap-external-re
 - `SKILL.md` 保持短，长模板放 `references/`。
 - 不提交密钥、日志、SQLite 状态库、shell 快照。
 - Skill 能力盘点与候选合并建议见 `docs/skills-capabilities.md`。
+- Codex plugin 安装建议见 `docs/codex-plugins-guide.md`。
 - `/home/ppw/ppw-codex-kit` 已归档，后续只维护本仓库。
