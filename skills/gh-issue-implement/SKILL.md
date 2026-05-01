@@ -16,6 +16,16 @@ description: 用 gh CLI 实现 GitHub issue 并创建 PR。触发于用户要求
 
 ## 工作流
 
+### 0. 环境和基线检查
+
+```bash
+gh repo view --json nameWithOwner,url
+git status --short
+git branch --show-current
+```
+
+如果有无关本地改动，先停止并说明；不要把用户工作混进 issue PR。
+
 ### 1. 获取 issue 上下文
 
 ```bash
@@ -26,8 +36,11 @@ gh issue view <number> --json number,title,body,labels,comments,assignees,url
 
 - 问题背景和目标用户影响。
 - 验收标准、复现步骤、约束条件。
+- `Implementation Notes`、`Definition of Done`、依赖和 rollout/migration notes。
 - 评论中的补充需求或变更。
 - label 暗示的类型、优先级、影响区域。
+
+如果 issue 缺少验收标准或验证方式，先基于现有上下文补一个临时实现计划；高风险缺口再问用户。
 
 ### 2. 探索代码与制定最小计划
 
@@ -35,12 +48,14 @@ gh issue view <number> --json number,title,body,labels,comments,assignees,url
 - 将验收标准拆成 3-7 个可执行步骤。
 - 找到应运行的验证命令；没有现成命令时，先给出最小验证方式。
 - 如果 issue 过大，建议拆分或只做当前 PR 的明确范围。
+- 输出短计划后再改代码；计划应包含文件/模块、测试、风险和不做什么。
 
 ### 3. 创建或确认工作分支
 
 如果当前不在合适分支：
 
 ```bash
+git fetch origin
 git switch -c issue-<number>-<short-slug>
 ```
 
@@ -53,6 +68,7 @@ git switch -c issue-<number>-<short-slug>
 - 有复发风险时补回归测试。
 - 运行与本 issue 相关的测试、lint、build 或 smoke test。
 - 对本 `mycodex` 仓库，默认验证命令是 `./scripts/linux/verify.sh`；对其他项目按项目文档执行。
+- 如果验证失败，记录失败命令、错误摘要和下一步；不要创建“看起来完成”的 PR。
 
 ### 5. 可选进度评论
 
@@ -71,6 +87,7 @@ gh issue comment <number> --body "Progress: ..."
 ```bash
 git status --short
 git diff --stat
+git diff --check
 ```
 
 提交示例：
@@ -87,16 +104,29 @@ PR body 必须包含：
 ## Summary
 - ...
 
+## Issue
+Closes #<number>
+
 ## Testing
 - ...
 
-Closes #<number>
+## Risk / Rollout
+- ...
+
+## Notes for Reviewer
+- ...
 ```
 
 创建 PR：
 
 ```bash
 gh pr create --title "<type>: <issue title>" --body-file <body-file>
+```
+
+如果存在未验证项或需要人工确认，先创建 draft PR：
+
+```bash
+gh pr create --draft --title "<type>: <issue title>" --body-file <body-file>
 ```
 
 ## 输出要求
@@ -107,6 +137,7 @@ gh pr create --title "<type>: <issue title>" --body-file <body-file>
 - 主要改动摘要。
 - 已运行的验证命令和结果。
 - 未完成项、风险或需要用户决策的点。
+- 如果创建的是 draft PR，明确说明转 ready 的条件。
 
 ## 停止条件
 

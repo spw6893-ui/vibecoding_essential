@@ -21,6 +21,23 @@ Trigger this skill when:
 
 ## Workflow
 
+### Phase 0: Repository & Label Readiness
+
+Before creating issues:
+
+1. Verify repository context:
+   ```bash
+   gh repo view --json nameWithOwner,url
+   git remote -v
+   ```
+2. Check existing labels to avoid duplicates or incompatible naming:
+   ```bash
+   gh label list --limit 100
+   ```
+3. Create missing standard labels only when needed; if the repo uses a different taxonomy, follow the repo's existing labels.
+
+Issue bodies should be implementation-ready for `gh-issue-implement` and review-ready for `gh-pr-review`.
+
 ### Phase 1: Complexity Assessment
 
 Analyze the request to determine task complexity:
@@ -63,8 +80,18 @@ For simple tasks:
    - [ ] [Testable criterion 1]
    - [ ] [Testable criterion 2]
 
+   ## Implementation Notes
+   - Suggested files/components:
+   - Suggested verification:
+   - Rollout/migration notes:
+
    ## Technical Notes
    [Constraints, dependencies, risks]
+
+   ## Definition of Done
+   - [ ] Acceptance criteria are met
+   - [ ] Tests or verification commands are documented
+   - [ ] Docs/config updates are included if needed
    ```
 
 3. **Create Issue:**
@@ -115,8 +142,16 @@ For complex tasks:
    - [Measurable outcome 1]
    - [Measurable outcome 2]
 
+   ## Dependency Order
+   [Blocking order and parallelizable work]
+
    ## Technical Notes
    [Architecture decisions, constraints, risks]
+
+   ## Definition of Done
+   - [ ] All linked sub-issues are closed
+   - [ ] Final integration verification passes
+   - [ ] Release/rollout notes are documented
    ```
 
    ```bash
@@ -135,6 +170,13 @@ For complex tasks:
    ```
 
    Track created sub-issue numbers.
+
+   Each sub-issue body should include:
+   - Parent epic link: `Part of #$EPIC_NUMBER`
+   - Scope boundary and non-goals
+   - Acceptance criteria
+   - Suggested verification command
+   - Dependencies: `Blocked by #N` or `Can run in parallel`
 
 6. **Update Epic with Sub-Issue Links:**
    ```bash
@@ -157,6 +199,17 @@ Before finalizing:
 - Confirm dependencies are documented
 - Ensure labels are appropriate
 - For epics: validate sub-issue scope and order
+- Confirm each issue has enough detail for `gh-issue-implement` to start without rereading the original PRD
+- Confirm review/merge expectations are visible enough for `gh-pr-review`
+
+## Output Contract
+
+Final response should include:
+
+- Created issue URLs.
+- For epic mode: parent epic URL plus sub-issue table with priority and dependency.
+- Assumptions recorded in the issue body.
+- Suggested next command, usually `implement issue #N` or `review PR #N` after implementation.
 
 ## Label Strategy
 
