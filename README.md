@@ -7,7 +7,7 @@ PPW 的个人 Codex 仓库。
 - `skills/`：当前保留的 Codex skills
 - `references/`：从外部仓库提炼出来的少量参考资料，不保存完整上游镜像
 - `config/`：Codex 配置示例与当前机器配置快照
-- `docs/`：来源、裁剪记录、维护说明
+- `docs/`：来源、能力盘点与维护说明
 - `scripts/`：安装和同步脚本
 
 ## 当前 Skill
