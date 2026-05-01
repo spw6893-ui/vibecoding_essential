@@ -7,7 +7,6 @@
 | Skill | 核心能力 | 典型触发 | 备注 |
 |---|---|---|---|
 | `ppw-codex-engineer` | 个人工程路由：Codex 配置治理、项目框架模板、工程模板导航、数据服务模板选择、专用 skill 分发 | mycodex 维护、个人 skill 整理、项目初始化、scaffold/boilerplate、数据服务骨架 | 不作为普通实现/修复/审查默认入口；常驻工程规则放 `AGENTS.md` |
-| `code-guardrails` | 代码修改前的轻量工程护栏：最小护栏选择、架构边界、setup 边界、功能范围、bugfix 最小根因、重构边界、取舍披露 | 明确要求 guardrails/护栏/风险检查，或涉及 feature delivery、setup/tooling、bug fix、refactor、架构边界、公开 API、鉴权、数据迁移、prompt safety、快速交付取舍 | 已从 `mineskystudio/code-guardrails-skill` 裁剪为 Codex 语境；不用于完全机械的小改动 |
 | `product-spec-workflow` | PRD、需求确认、验收标准、测试用例、QA 计划、原型提示词 | 写 PRD、整理需求、产品到研发交付 | 聚合替代 myclaude 多个原生产品 skill |
 | `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | 只保留 issue 创建；实现/评审流程暂放 references |
 | `ddd-doc-steward` | 文档驱动开发，生成/更新 SSOT 文档并做一致性检查 | 文档与代码同步、补齐架构/集成/功能文档 | 强调证据，无法推导时标注待确认 |
@@ -56,7 +55,7 @@
 
 | Skill | 能力 | 适合吸收方式 |
 |---|---|---|
-| `code-guardrails` | 代码修改前的轻量工程护栏：架构边界、setup 边界、功能范围、取舍披露、bugfix 最小根因、重构边界、高风险先澄清 | 已作为独立轻量 active skill 安装，同时把高频硬规则沉淀到 `AGENTS.md` |
+| `code-guardrails` | 代码修改前的轻量工程护栏：架构边界、setup 边界、功能范围、取舍披露、bugfix 最小根因、重构边界、高风险先澄清 | 不再作为 active skill；高频硬规则保留在 `AGENTS.md` |
 
 ### code-guardrails 的关键规则
 
@@ -69,9 +68,9 @@
 
 ### 对 code-guardrails 的处理
 
-- 保留为 `skills/code-guardrails`，用于显式调用和高风险代码修改前的短检查。
+- 不保留为 active skill，避免普通编码规则挤占 skill 列表。
 - `AGENTS.md` 保留默认硬规则，确保普通编码任务也受到最小护栏约束。
-- 不把上游长文原样搬入；只保留 Codex 执行时需要的最小规则。
+- 如未来需要显式审查模式，再重新做一个更聚焦的 review/guardrails skill。
 
 ## 候选：Python / Rust / Go 语言类 Skills
 
@@ -95,7 +94,7 @@ Web 搜索到的语言类 skill 主要集中在 GitHub 上的 Claude/Codex skill
 
 以下候选能力已沉淀到 `AGENTS.md`，不新增 active skill：
 
-- `code-guardrails` 的最小护栏选择：小改动不加流程，高风险变更先澄清，feature/setup/bugfix/refactor 分别套用最小约束；同时保留独立 skill 方便显式调用。
+- `code-guardrails` 的最小护栏选择：小改动不加流程，高风险变更先澄清，feature/setup/bugfix/refactor 分别套用最小约束。
 - `superpowers/systematic-debugging` 的系统排障：先根因、再假设、再最小验证，连续失败时停止打补丁并重新评估架构。
 - `superpowers/verification-before-completion` 的验证前置：没有新鲜命令输出和退出码证据，不声称完成、修好或通过。
 

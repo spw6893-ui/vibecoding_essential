@@ -13,7 +13,6 @@ PPW 的个人 Codex 仓库。
 ## 当前 Skill
 
 - `ppw-codex-engineer`：个人工程路由、项目脚手架和工程模板导航
-- `code-guardrails`：代码修改前的轻量工程护栏
 - `product-spec-workflow`：PRD、需求确认、测试用例、原型提示词
 - `gh-create-issue`：从 PRD/需求创建 GitHub issue 或 epic
 - `ddd-doc-steward`：文档单一可信源
