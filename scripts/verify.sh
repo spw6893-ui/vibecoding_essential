@@ -4,18 +4,18 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-for script in scripts/*.sh; do
+while IFS= read -r script; do
   bash -n "$script"
-done
+done < <(find scripts -name '*.sh' -type f | sort)
 
 if command -v pwsh >/dev/null 2>&1; then
-  for script in scripts/*.ps1; do
+  while IFS= read -r script; do
     pwsh -NoProfile -Command "[void][System.Management.Automation.Language.Parser]::ParseFile('$script', [ref]\$null, [ref]\$null)"
-  done
+  done < <(find scripts -name '*.ps1' -type f | sort)
 elif command -v powershell >/dev/null 2>&1; then
-  for script in scripts/*.ps1; do
+  while IFS= read -r script; do
     powershell -NoProfile -Command "[void][System.Management.Automation.Language.Parser]::ParseFile('$script', [ref]\$null, [ref]\$null)"
-  done
+  done < <(find scripts -name '*.ps1' -type f | sort)
 else
   echo "skip PowerShell syntax check: pwsh/powershell not found"
 fi

@@ -37,13 +37,13 @@ PPW 的个人 Codex 仓库。
 
 ```bash
 git clone https://github.com/spw6893-ui/vibecoding_essential.git ~/.codex/repos/vibecoding_essential 2>/dev/null || git -C ~/.codex/repos/vibecoding_essential pull --ff-only
-bash ~/.codex/repos/vibecoding_essential/scripts/install.sh --prune
+bash ~/.codex/repos/vibecoding_essential/scripts/linux/install.sh --prune
 ```
 
 如果要同时补齐部分 skill 需要的外部依赖仓库：
 
 ```bash
-bash ~/.codex/repos/vibecoding_essential/scripts/bootstrap-external-repos.sh
+bash ~/.codex/repos/vibecoding_essential/scripts/linux/bootstrap-external-repos.sh
 ```
 
 如果仓库改成公开仓库，也可以用 raw 脚本一条命令安装：
@@ -58,13 +58,13 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_es
 
 ```powershell
 git clone https://github.com/spw6893-ui/vibecoding_essential.git "$HOME\.codex\repos\vibecoding_essential" 2>$null; if ($LASTEXITCODE -ne 0) { git -C "$HOME\.codex\repos\vibecoding_essential" pull --ff-only }
-powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essential\scripts\install.ps1" -Prune
+powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essential\scripts\windows\install.ps1" -Prune
 ```
 
 如果要同时补齐部分 skill 需要的外部依赖仓库：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essential\scripts\bootstrap-external-repos.ps1"
+powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essential\scripts\windows\bootstrap-external-repos.ps1"
 ```
 
 如果仓库改成公开仓库，也可以用 raw 脚本一条命令安装：
@@ -81,10 +81,22 @@ $p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing h
 ./scripts/install.sh
 ```
 
+平台目录入口：
+
+```bash
+./scripts/linux/install.sh --prune
+```
+
 Windows:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Prune
+```
+
+平台目录入口：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\windows\install.ps1 -Prune
 ```
 
 默认安装到 `${CODEX_HOME:-$HOME/.codex}`，Windows 下默认是 `$HOME\.codex`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `config.toml` 或 `AGENTS.md`。
@@ -103,10 +115,22 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Prune
 ./scripts/bootstrap-external-repos.sh
 ```
 
+平台目录入口：
+
+```bash
+./scripts/linux/bootstrap-external-repos.sh
+```
+
 Windows 对应命令：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-external-repos.ps1
+```
+
+平台目录入口：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\windows\bootstrap-external-repos.ps1
 ```
 
 ## 维护原则
