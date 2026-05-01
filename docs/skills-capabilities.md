@@ -90,11 +90,12 @@ Web 搜索到的语言类 skill 主要集中在 GitHub 上的 Claude/Codex skill
 - 如果后续确实需要沉淀，建议放 `references/language-notes/`，或在具体项目仓库内放项目级 `AGENTS.md`，不要污染个人全局 skill 列表。
 - 只有高复用、工具链明确、触发边界窄的语言能力，才值得升级成 active skill。
 
-## 下一步建议
+## 已吸收的全局规则
 
-优先做一次全局规则和专项 skill 边界整理，而不是安装更多活跃 skills：
+以下候选能力已沉淀到 `AGENTS.md`，不新增 active skill：
 
-- 加入 `code-guardrails` 的“最小护栏选择”。
-- 加入 `superpowers` 的“系统排障”和“验证前置”硬规则。
-- 加入“复杂任务先 spec/plan，简单任务直接做”的分流。
-- 保持活跃 skill 数不变，避免触发噪声上升。
+- `code-guardrails` 的最小护栏选择：小改动不加流程，高风险变更先澄清，feature/setup/bugfix/refactor 分别套用最小约束。
+- `superpowers/systematic-debugging` 的系统排障：先根因、再假设、再最小验证，连续失败时停止打补丁并重新评估架构。
+- `superpowers/verification-before-completion` 的验证前置：没有新鲜命令输出和退出码证据，不声称完成、修好或通过。
+
+保留策略：继续保持活跃 skill 数不变，避免把普通工程纪律包装成全局触发 skill。
