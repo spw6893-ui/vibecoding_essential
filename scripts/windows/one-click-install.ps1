@@ -1,6 +1,8 @@
 param(
     [switch]$Prune,
-    [switch]$WithExternalRepos
+    [switch]$WithExternalRepos,
+    [switch]$WithGlobalAgents,
+    [switch]$NoGlobalAgents
 )
 
 $ErrorActionPreference = "Stop"
@@ -31,11 +33,10 @@ git -C $InstallDir checkout $RepoRef
 git -C $InstallDir pull --ff-only origin $RepoRef
 
 $InstallScript = Join-Path $InstallDir "scripts\windows\install.ps1"
-if ($Prune) {
-    & $InstallScript -Prune
-} else {
-    & $InstallScript
-}
+$InstallArgs = @()
+if ($Prune) { $InstallArgs += "-Prune" }
+if ($NoGlobalAgents) { $InstallArgs += "-NoGlobalAgents" } else { $InstallArgs += "-WithGlobalAgents" }
+& $InstallScript @InstallArgs
 
 if ($WithExternalRepos) {
     & (Join-Path $InstallDir "scripts\windows\bootstrap-external-repos.ps1")
@@ -45,4 +46,5 @@ Write-Host ""
 Write-Host "安装完成。"
 Write-Host "仓库目录: $InstallDir"
 Write-Host "Codex 目录: $CodexHome"
+Write-Host "全局规则: $(Join-Path $CodexHome "AGENTS.md")"
 Write-Host "请重开 Codex 会话，让 skill 列表刷新。"

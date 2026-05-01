@@ -35,7 +35,7 @@ PPW 的个人 Codex 仓库。
 
 ### Linux / macOS
 
-默认方式，适合公开或私有仓库，只要当前机器的 `git` 有访问权限：
+默认方式，适合公开或私有仓库，只要当前机器的 `git` 有访问权限。安装会同步 skills/references，并安装全局 `~/.codex/AGENTS.md`，原文件会自动备份：
 
 ```bash
 git clone https://github.com/spw6893-ui/vibecoding_essential.git ~/.codex/repos/vibecoding_essential 2>/dev/null || git -C ~/.codex/repos/vibecoding_essential pull --ff-only
@@ -77,6 +77,8 @@ $p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing h
 
 安装后重开 Codex 会话，让技能发现列表刷新。
 
+一次安装后，`~/.codex/skills` 和 `~/.codex/AGENTS.md` 都会对后续所有项目生效，通常不需要为每个项目重复安装。
+
 ### 本地仓库安装
 
 ```bash
@@ -89,9 +91,21 @@ Windows:
 powershell -ExecutionPolicy Bypass -File .\scripts\windows\install.ps1 -Prune
 ```
 
-默认安装到 `${CODEX_HOME:-$HOME/.codex}`，Windows 下默认是 `$HOME\.codex`。安装只同步 `skills/` 和 `references/`，不会覆盖你的 `config.toml` 或 `AGENTS.md`。
+默认安装到 `${CODEX_HOME:-$HOME/.codex}`，Windows 下默认是 `$HOME\.codex`。安装会同步 `skills/`、`references/` 和全局 `AGENTS.md`，不会覆盖你的 `config.toml`。
 
-当前机器的全局 Codex 配置快照保存在 `config/codex/`。其中 `global-agents.snapshot.md` 是 `~/.codex/AGENTS.md` 的备份副本，不作为本仓库运行规则；不会被 `install.sh` 自动写回。
+如果不想写入全局 `AGENTS.md`：
+
+```bash
+./scripts/linux/install.sh --prune --no-global-agents
+```
+
+Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\windows\install.ps1 -Prune -NoGlobalAgents
+```
+
+当前机器的全局 Codex 配置快照保存在 `config/codex/`。其中 `global-agents.snapshot.md` 是历史备份副本；真正用于全局安装的是 `global-agents.template.md`。
 
 如果要删除之前裁掉的旧 skill 残留：
 

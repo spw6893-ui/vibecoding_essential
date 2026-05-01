@@ -4,21 +4,28 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 PRUNE=0
+WITH_GLOBAL_AGENTS=1
 
 for arg in "$@"; do
   case "$arg" in
     --prune)
       PRUNE=1
       ;;
+    --with-global-agents)
+      WITH_GLOBAL_AGENTS=1
+      ;;
+    --no-global-agents)
+      WITH_GLOBAL_AGENTS=0
+      ;;
     -h|--help)
-      echo "用法: $0 [--prune]" >&2
-      echo "说明: 本脚本只同步 skills/ 与 references/，不会覆盖 ~/.codex/config.toml 或 ~/.codex/AGENTS.md" >&2
+      echo "用法: $0 [--prune] [--with-global-agents|--no-global-agents]" >&2
+      echo "说明: 同步 skills/、references/，默认安装全局 AGENTS.md；不会覆盖 config.toml" >&2
       exit 0
       ;;
     *)
       echo "未知参数: $arg" >&2
-      echo "用法: $0 [--prune]" >&2
-      echo "说明: 本脚本只同步 skills/ 与 references/，不会覆盖 ~/.codex/config.toml 或 ~/.codex/AGENTS.md" >&2
+      echo "用法: $0 [--prune] [--with-global-agents|--no-global-agents]" >&2
+      echo "说明: 同步 skills/、references/，默认安装全局 AGENTS.md；不会覆盖 config.toml" >&2
       exit 2
       ;;
   esac
@@ -51,5 +58,17 @@ sync_dir_contents "$ROOT_DIR/skills" "$CODEX_HOME/skills"
 # 仅清理本仓库管理的参考目录，避免删除用户自己的 references。
 rm -rf "$CODEX_HOME/references/gh-flow" "$CODEX_HOME/references/vibe-coding-cn" "$CODEX_HOME/references/engineering-templates" "$CODEX_HOME/references/myclaude-skills"
 sync_dir_contents "$ROOT_DIR/references" "$CODEX_HOME/references"
+
+if [[ "$WITH_GLOBAL_AGENTS" -eq 1 ]]; then
+  src_agents="$ROOT_DIR/config/codex/global-agents.template.md"
+  dest_agents="$CODEX_HOME/AGENTS.md"
+  if [[ -f "$dest_agents" ]] && ! cmp -s "$src_agents" "$dest_agents"; then
+    backup="$CODEX_HOME/AGENTS.md.backup.$(date +%Y%m%d%H%M%S)"
+    cp "$dest_agents" "$backup"
+    echo "已备份原全局 AGENTS.md: $backup"
+  fi
+  cp "$src_agents" "$dest_agents"
+  echo "已安装全局 AGENTS.md: $dest_agents"
+fi
 
 echo "mycodex 已安装到: $CODEX_HOME"

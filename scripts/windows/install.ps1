@@ -1,5 +1,7 @@
 param(
-    [switch]$Prune
+    [switch]$Prune,
+    [switch]$WithGlobalAgents,
+    [switch]$NoGlobalAgents
 )
 
 $ErrorActionPreference = "Stop"
@@ -16,6 +18,14 @@ if ($env:CODEX_HOME) {
 $SkillsDir = Join-Path $CodexHome "skills"
 $ReferencesDir = Join-Path $CodexHome "references"
 New-Item -ItemType Directory -Force -Path $SkillsDir, $ReferencesDir | Out-Null
+
+$InstallGlobalAgents = $true
+if ($NoGlobalAgents) {
+    $InstallGlobalAgents = $false
+}
+if ($WithGlobalAgents) {
+    $InstallGlobalAgents = $true
+}
 
 function Remove-PathIfExists {
     param([string]$Path)
@@ -60,6 +70,24 @@ Get-ChildItem -LiteralPath $SourceReferences -Directory | ForEach-Object {
     $Target = Join-Path $ReferencesDir $_.Name
     Remove-PathIfExists $Target
     Copy-Item -LiteralPath $_.FullName -Destination $Target -Recurse -Force
+}
+
+if ($InstallGlobalAgents) {
+    $SourceAgents = Join-Path $RootDir "config\codex\global-agents.template.md"
+    $DestAgents = Join-Path $CodexHome "AGENTS.md"
+
+    if ((Test-Path -LiteralPath $DestAgents)) {
+        $Existing = Get-Content -LiteralPath $DestAgents -Raw
+        $Incoming = Get-Content -LiteralPath $SourceAgents -Raw
+        if ($Existing -ne $Incoming) {
+            $Backup = Join-Path $CodexHome ("AGENTS.md.backup." + (Get-Date -Format "yyyyMMddHHmmss"))
+            Copy-Item -LiteralPath $DestAgents -Destination $Backup -Force
+            Write-Host "已备份原全局 AGENTS.md: $Backup"
+        }
+    }
+
+    Copy-Item -LiteralPath $SourceAgents -Destination $DestAgents -Force
+    Write-Host "已安装全局 AGENTS.md: $DestAgents"
 }
 
 Write-Host "mycodex 已安装到: $CodexHome"

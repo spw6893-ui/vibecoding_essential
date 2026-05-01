@@ -7,10 +7,11 @@ CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 INSTALL_DIR="${MYCODEX_INSTALL_DIR:-$CODEX_HOME/repos/vibecoding_essential}"
 PRUNE=0
 WITH_EXTERNAL_REPOS=0
+WITH_GLOBAL_AGENTS=1
 
 usage() {
   cat >&2 <<'EOF'
-用法: one-click-install.sh [--prune] [--with-external-repos]
+用法: one-click-install.sh [--prune] [--with-external-repos] [--with-global-agents|--no-global-agents]
 
 环境变量:
   CODEX_HOME              Codex 主目录，默认 ~/.codex
@@ -20,7 +21,8 @@ usage() {
 
 说明:
   - 同步 skills/ 与 references/ 到 CODEX_HOME。
-  - 不覆盖 ~/.codex/config.toml 或 ~/.codex/AGENTS.md。
+  - 默认安装全局 ~/.codex/AGENTS.md，覆盖前自动备份。
+  - 不覆盖 ~/.codex/config.toml。
   - --prune 会删除本仓库明确裁掉的旧 skill 残留。
 EOF
 }
@@ -32,6 +34,12 @@ for arg in "$@"; do
       ;;
     --with-external-repos)
       WITH_EXTERNAL_REPOS=1
+      ;;
+    --with-global-agents)
+      WITH_GLOBAL_AGENTS=1
+      ;;
+    --no-global-agents)
+      WITH_GLOBAL_AGENTS=0
       ;;
     -h|--help)
       usage
@@ -71,6 +79,11 @@ install_args=()
 if [[ "$PRUNE" -eq 1 ]]; then
   install_args+=(--prune)
 fi
+if [[ "$WITH_GLOBAL_AGENTS" -eq 1 ]]; then
+  install_args+=(--with-global-agents)
+else
+  install_args+=(--no-global-agents)
+fi
 
 bash "$INSTALL_DIR/scripts/linux/install.sh" "${install_args[@]}"
 
@@ -83,6 +96,7 @@ cat <<EOF
 
 仓库目录: $INSTALL_DIR
 Codex 目录: $CODEX_HOME
+全局规则: $CODEX_HOME/AGENTS.md
 
 请重开 Codex 会话，让 skill 列表刷新。
 EOF
