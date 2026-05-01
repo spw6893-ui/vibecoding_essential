@@ -6,7 +6,7 @@
 
 - `linux/`：Linux/macOS Bash 脚本。
 - `windows/`：Windows PowerShell 脚本。
-- 根目录脚本：兼容入口，只转发到对应平台目录，避免旧命令失效。
+- `README.md`：统一说明；除本文档外，脚本文件都放在平台目录。
 
 ## Linux / macOS
 
@@ -19,7 +19,7 @@
 一键拉取仓库并安装：
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.sh)" -- --prune
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/linux/one-click-install.sh)" -- --prune
 ```
 
 补齐外部依赖仓库：
@@ -39,7 +39,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\windows\install.ps1 -Prune
 一键拉取仓库并安装：
 
 ```powershell
-$p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.ps1 -OutFile $p; powershell -ExecutionPolicy Bypass -File $p -Prune
+$p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/windows/one-click-install.ps1 -OutFile $p; powershell -ExecutionPolicy Bypass -File $p -Prune
 ```
 
 补齐外部依赖仓库：
@@ -48,18 +48,10 @@ $p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing h
 powershell -ExecutionPolicy Bypass -File .\scripts\windows\bootstrap-external-repos.ps1
 ```
 
-## 兼容入口
-
-以下旧命令仍可用：
+## 验证
 
 ```bash
-./scripts/install.sh --prune
-./scripts/bootstrap-external-repos.sh
-```
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Prune
-powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-external-repos.ps1
+./scripts/linux/verify.sh
 ```
 
 ## 说明

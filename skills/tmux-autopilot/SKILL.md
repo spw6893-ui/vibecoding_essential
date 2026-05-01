@@ -173,4 +173,4 @@ tmux pipe-pane -t <session>:<window>.<pane> -o 'cat >> /tmp/tmux-<session>-<wind
 4. ≥3 个端到端示例，含输入/步骤/验收。
 5. 长文档放在 `references/` 并可导航；无文档堆砌。
 6. 不确定项给出验证路径；禁止虚构 tmux 行为。
-7. 运行仓库级 `./scripts/verify.sh` 通过。
+7. 运行仓库级 `./scripts/linux/verify.sh` 通过。

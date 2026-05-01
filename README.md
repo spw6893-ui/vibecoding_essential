@@ -49,7 +49,7 @@ bash ~/.codex/repos/vibecoding_essential/scripts/linux/bootstrap-external-repos.
 如果仓库改成公开仓库，也可以用 raw 脚本一条命令安装：
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.sh)" -- --prune
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/linux/one-click-install.sh)" -- --prune
 ```
 
 ### Windows PowerShell
@@ -70,7 +70,7 @@ powershell -ExecutionPolicy Bypass -File "$HOME\.codex\repos\vibecoding_essentia
 如果仓库改成公开仓库，也可以用 raw 脚本一条命令安装：
 
 ```powershell
-$p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/one-click-install.ps1 -OutFile $p; powershell -ExecutionPolicy Bypass -File $p -Prune
+$p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing https://raw.githubusercontent.com/spw6893-ui/vibecoding_essential/main/scripts/windows/one-click-install.ps1 -OutFile $p; powershell -ExecutionPolicy Bypass -File $p -Prune
 ```
 
 安装后重开 Codex 会话，让技能发现列表刷新。
@@ -78,22 +78,10 @@ $p = Join-Path $env:TEMP "mycodex-one-click-install.ps1"; iwr -UseBasicParsing h
 ### 本地仓库安装
 
 ```bash
-./scripts/install.sh
-```
-
-平台目录入口：
-
-```bash
 ./scripts/linux/install.sh --prune
 ```
 
 Windows:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\install.ps1 -Prune
-```
-
-平台目录入口：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\windows\install.ps1 -Prune
@@ -106,28 +94,16 @@ powershell -ExecutionPolicy Bypass -File .\scripts\windows\install.ps1 -Prune
 如果要删除之前裁掉的旧 skill 残留：
 
 ```bash
-./scripts/install.sh --prune
+./scripts/linux/install.sh --prune
 ```
 
 如果要补齐部分 skill 需要的外部依赖仓库：
-
-```bash
-./scripts/bootstrap-external-repos.sh
-```
-
-平台目录入口：
 
 ```bash
 ./scripts/linux/bootstrap-external-repos.sh
 ```
 
 Windows 对应命令：
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\bootstrap-external-repos.ps1
-```
-
-平台目录入口：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\windows\bootstrap-external-repos.ps1
