@@ -8,7 +8,9 @@
 |---|---|---|---|
 | `ppw-codex-engineer` | 个人工程路由：Codex 配置治理、项目框架模板、工程模板导航、数据服务模板选择、专用 skill 分发 | mycodex 维护、个人 skill 整理、项目初始化、scaffold/boilerplate、数据服务骨架 | 不作为普通实现/修复/审查默认入口；常驻工程规则放 `AGENTS.md` |
 | `product-spec-workflow` | PRD、需求确认、验收标准、测试用例、QA 计划、原型提示词 | 写 PRD、整理需求、产品到研发交付 | 聚合替代 myclaude 多个原生产品 skill |
-| `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | 只保留 issue 创建；实现/评审流程暂放 references |
+| `gh-create-issue` | 从 PRD/需求创建 GitHub issue 或 epic + sub-issues | 创建 issue、拆任务、需求入 GitHub | GitHub flow 三件套之一 |
+| `gh-issue-implement` | 读取 GitHub issue、分析需求、实现代码、验证并创建 PR | implement issue #N、work on issue、issue-to-PR | 已重写为 Codex 原生流程，不依赖 dev/codeagent |
+| `gh-pr-review` | 审查 PR、检查 CI、分析失败日志、按需修复或合并 | review PR #N、检查 PR、merge PR、review issue:N | 默认不自动合并，除非用户明确要求 |
 | `ddd-doc-steward` | 文档驱动开发，生成/更新 SSOT 文档并做一致性检查 | 文档与代码同步、补齐架构/集成/功能文档 | 强调证据，无法推导时标注待确认 |
 | `harness` | 多会话长任务检查点、恢复、依赖管理 | 长任务、跨会话、失败恢复 | 更偏长周期任务治理 |
 | `heroui-pro` | HeroUI/NextUI Pro 组件库、Next.js App Router 集成、组件搜索 | HeroUI、NextUI、Dashboard、SaaS、AI chat、落地页 | 活跃保留；含本地组件资源 |

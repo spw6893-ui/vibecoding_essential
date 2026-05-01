@@ -15,6 +15,8 @@ PPW 的个人 Codex 仓库。
 - `ppw-codex-engineer`：个人工程路由、项目脚手架和工程模板导航
 - `product-spec-workflow`：PRD、需求确认、测试用例、原型提示词
 - `gh-create-issue`：从 PRD/需求创建 GitHub issue 或 epic
+- `gh-issue-implement`：实现 GitHub issue 并创建 PR
+- `gh-pr-review`：审查 GitHub PR、检查 CI 并按需修复/合并
 - `ddd-doc-steward`：文档单一可信源
 - `harness`：长任务检查点和恢复
 - `heroui-pro`：HeroUI/NextUI Pro 组件库与 Next.js 集成
@@ -27,7 +29,7 @@ PPW 的个人 Codex 仓库。
 - `twscrape`：Twitter/X 数据抓取
 
 `myclaude` 的 PRD、测试、原型提示词等内容已提炼进 `product-spec-workflow`，不再保留原始 skill 副本。
-`references/gh-flow/` 保留 GitHub issue-to-PR / PR review 原始流程作为参考，不作为活跃技能暴露。
+`gh-flow` 三件套覆盖 issue 创建、issue 实现和 PR review；`references/gh-flow/` 保留上游原始流程作为参考。
 
 ## 安装
 
