@@ -36,108 +36,12 @@ args = ["-y", "@mcpcentral/mcp-time"]
 [mcp_servers.mcp-shrimp-task-manager]
 command = "npx"
 args = ["-y", "mcp-shrimp-task-manager"]
-env = { DATA_DIR = "/Users/lostsheep/tools/mcp-shrimp-task-manager/data", TEMPLATES_USE = "zh", ENABLE_GUI = "false" }
+env = { TEMPLATES_USE = "zh", ENABLE_GUI = "false" }
 
 [mcp_servers.mcp-deepwiki]
 command = "npx"
 args = ["-y", "mcp-deepwiki@latest"]
 startup_timeout_ms = 60000
-
-[mcp_servers.desktop-commander]
-command = "node"
-args = ["/home/ppw/uniswap_learning/DesktopCommanderMCP/dist/index.js"]
-
-
-[notice]
-"hide_gpt-5.1-codex-max_migration_prompt" = true
-
-[notice.model_migrations]
-"gpt-5.2" = "gpt-5.4"
-"gpt-5.2-codex" = "gpt-5.3-codex"
-
-[projects."/home/ppw/quantPlatform"]
-trust_level = "trusted"
-
-[projects."/home/ppw/uniswap_learning"]
-trust_level = "trusted"
-
-[projects."/home/ppw"]
-trust_level = "trusted"
-
-[projects."/home/ppw/uniswap_learning/DesktopCommanderMCP"]
-trust_level = "trusted"
-
-[projects."/home/ppw/new_branch/nautilus_trader"]
-trust_level = "trusted"
-
-[projects."/home/ppw/uniswap_learning/v2-core"]
-trust_level = "trusted"
-
-[projects."/home/ppw/new_branch/reverse"]
-trust_level = "trusted"
-
-[projects."/home/ppw/tradeterminal"]
-trust_level = "trusted"
-
-[projects."/home/ppw/cv_prepare/Nexus"]
-trust_level = "trusted"
-
-[projects."/home/ppw/cv_prepare/uniswap-v4-hook-main"]
-trust_level = "trusted"
-
-[projects."/home/ppw/cv_prepare"]
-trust_level = "trusted"
-
-[projects."/home/ppw/zhongzhuan"]
-trust_level = "trusted"
-
-[projects."/home/ppw/polymarket/nautilus_trader"]
-trust_level = "trusted"
-
-[projects."/home/ppw/polymarket"]
-trust_level = "trusted"
-
-[projects."/home/ppw/app-monorepo"]
-trust_level = "trusted"
-
-[projects."/home/ppw/productivity"]
-trust_level = "trusted"
-
-[projects."/home/ppw/stockClaw"]
-trust_level = "trusted"
-
-[projects."/home/ppw/executionBot"]
-trust_level = "trusted"
-
-[projects."/home/ppw/upbit_arb"]
-trust_level = "trusted"
-
-[projects."/home/ppw/vision"]
-trust_level = "trusted"
-
-[projects."/home/ppw/hype-LongShort"]
-trust_level = "trusted"
-
-[projects."/home/ppw/design"]
-trust_level = "trusted"
-
-[projects."/home/ppw/hype-LongShort/nautilus_trader"]
-trust_level = "trusted"
-
-[projects."/home/ppw/xauarb"]
-trust_level = "trusted"
-
-[projects."/home/ppw/stockClaw-clean"]
-trust_level = "trusted"
-
-[projects."/home/ppw/Informer"]
-trust_level = "trusted"
-
-[projects."/home/ppw/.openclaw/workspace"]
-trust_level = "trusted"
-
-[projects."/home/ppw/.openclaw/workspace/informer-explain"]
-trust_level = "trusted"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 4
